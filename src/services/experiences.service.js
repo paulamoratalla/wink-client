@@ -3,7 +3,7 @@ import axios from 'axios'
 class ExperiencesService {
 
     constructor() {
-        this.api = axios.create({ baseURL: `${process.env.REACT_APP_API_URL}/places` })
+        this.api = axios.create({ baseURL: `${process.env.REACT_APP_API_URL}/experience` })
 
         this.api.interceptors.request.use((config) => {
 
@@ -37,3 +37,6 @@ class ExperiencesService {
         return this.api.put(`/${id}/edit`, experienceData)
     }
 }
+
+const experiencesService = new ExperiencesService()
+export default experiencesService
