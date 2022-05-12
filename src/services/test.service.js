@@ -3,7 +3,7 @@ import axios from 'axios'
 class TestService {
 
     constructor() {
-        this.api = axios.create({ baseURL: `${process.env.REACT_APP_API_URL}/places` })
+        this.api = axios.create({ baseURL: `${process.env.REACT_APP_API_URL}/test` })
 
         this.api.interceptors.request.use((config) => {
 
@@ -26,7 +26,6 @@ class TestService {
 
     getOneTest = id => {
         return this.api.get(`/${id}`)
-
     }
 
     deleteOneTest = id => {
@@ -39,3 +38,5 @@ class TestService {
     }
 }
 
+const testService = new TestService()
+export default testService
