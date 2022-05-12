@@ -1,11 +1,14 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+import AppRoutes from '../routes/AppRoutes';
+import Navigation from './Navigation/Navigation';
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <h1>Wink</h1>
-    </div>
+    <>
+      <Navigation />
+      <AppRoutes />
+    </>
   );
 }
 
-export default App;
+export default App
