@@ -37,3 +37,6 @@ class ExperiencesService {
         return this.api.put(`/${id}/edit`, experienceData)
     }
 }
+
+const experiencesService = new ExperiencesService()
+export default experiencesService

@@ -39,3 +39,6 @@ class TestService {
     }
 }
 
+const testService = new TestService()
+export default testService
+
