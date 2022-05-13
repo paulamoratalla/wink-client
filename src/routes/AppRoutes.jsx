@@ -1,11 +1,9 @@
 import LoginPage from "../pages/LoginPage/LoginPage"
 import SignupPage from "../pages/SignupPage/SignupPage"
-import HomePage from '../pages/HomePage/HomePage'
+import HomePage from '../pages/FeedPage/FeedPage'
 import ExperienceDetailsPage from '../pages/ExperienceDetailsPage/ExperienceDetailsPage'
-import LandingPage from '../pages/LandingPage/LandingPage'
+import LandingPage from '../pages/HomePage/HomePage'
 import ProfilePage from '../pages/ProfilePage/ProfilePage'
-import SignupPage from "../pages/SignupPage/SignupPage"
-import HomePage from "../pages/HomePage/HomePage"
 import ExperiencesPage from "../pages/ExperiencesPage/ExperiencesPage"
 
 import { Routes, Route } from "react-router-dom"
@@ -27,7 +25,7 @@ const AppRoutes = () => {
 
             <Route path="/login" element={<LoginPage />} />
 
-            <Route path='/home' element={<PrivateRoute />} >
+            <Route path='/feed' element={<PrivateRoute />} >
                 <Route path='' element={<HomePage />} />
             </Route>
 
