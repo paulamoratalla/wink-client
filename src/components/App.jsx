@@ -1,5 +1,6 @@
 import AppRoutes from '../routes/AppRoutes';
 import Navigation from './Navigation/Navigation';
+import Footer from './Footer/Footer';
 
 
 const App = () => {
@@ -7,6 +8,7 @@ const App = () => {
     <>
       <Navigation />
       <AppRoutes />
+      <Footer />
     </>
   );
 }
