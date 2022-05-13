@@ -1,9 +1,9 @@
-import LoginPage from "../components/pages/LoginPage/LoginPage"
-import SignupPage from "../components/pages/SignupPage/SignupPage"
+import LoginPage from '../pages/LoginPage/LoginPage'
+import SignupPage from "../pages/SignupPage/SignupPage"
 import HomePage from '../pages/HomePage/HomePage'
 import ExperienceDetailsPage from '../pages/ExperienceDetailsPage/ExperienceDetailsPage'
 import LandingPage from '../pages/LandingPage/LandingPage'
-import ProfilePage from '../pages/ProfilePage'
+import ProfilePage from '../pages/ProfilePage/ProfilePage'
 
 
 import { Routes, Route } from "react-router-dom"

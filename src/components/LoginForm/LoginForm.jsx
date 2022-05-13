@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { AuthContext } from './../../context/auth.context'
 
 
-const Loginform = () => {
+const Loginform = ({ changeModalContent }) => {
 
     const [loginData, setLoginData] = useState({
         password: '',
@@ -49,8 +49,12 @@ const Loginform = () => {
                 <Form.Label>Password</Form.Label>
                 <Form.Control type="password" onChange={handleInputChange} name="password" value={password} />
             </Form.Group>
-
             <Button variant="dark" type="submit">Log in</Button>
+            <div class="text-center">
+                <p>Don't have an account yet? <button onClick={() => changeModalContent('signup')}> Sign up</button></p>
+            </div>
+            {/* <Button className="big-btn" onClick={openSignUpModal}>Log In</Button> */}
+
         </Form>
 
     )
