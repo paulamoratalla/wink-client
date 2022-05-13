@@ -1,5 +1,4 @@
-import { Container, Button, Row, Modal, Link } from "react-bootstrap/lib/Tab";
-import { useEffect, useState } from "react";
+import { Container } from "react-bootstrap";
 
 const LandingPage = () => {
 

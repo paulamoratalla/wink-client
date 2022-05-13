@@ -1,5 +1,5 @@
 import { Container, Button, Row, Col } from 'react-bootstrap'
-import Loginform from '../../LoginForm/LoginForm'
+import Loginform from '../../components/LoginForm/LoginForm'
 
 
 
