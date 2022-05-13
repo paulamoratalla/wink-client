@@ -7,6 +7,11 @@ const ExperienceCard = ({ name, imageExp }) => {
             <Card.Img variant="top" src={imageExp} alt="Experience card" />
             <Card.Body>
                 <Card.Title>{name}</Card.Title>
+                <Link to={`/experience/${id}`}>
+                    <div className="d-grid gap-2">
+                        <Button variant="dark">See Details</Button>
+                    </div>
+                </Link>
             </Card.Body>
         </Card>
     )
