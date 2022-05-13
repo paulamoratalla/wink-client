@@ -26,6 +26,7 @@ function ExperienceDetailsPage() {
 
     const { name, place, descriptionExp, price, imageExp } = experienceDetails
 
+
     return (
         isLoading
             ?
