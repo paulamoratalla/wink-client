@@ -90,6 +90,10 @@ const SignupForm = () => {
                 <Form.Control type="text" onChange={handleInputChange} name="city" value={city} />
             </Form.Group>
 
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+                <label class="form-check-label" for="exampleCheck1">I am 18 years or older</label>
+            </div>
 
             <Button variant="dark" type="submit" disabled={loadingImage}>{loadingImage ? 'Loading Image...' : 'Sign up'}</Button>
         </Form>
@@ -98,3 +102,12 @@ const SignupForm = () => {
 }
 
 export default SignupForm
+
+
+
+
+
+
+
+
+
