@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Form, Buttom } from "react-bootstrap"
-import experiencesService from "../../services/experiences.service"
+import uploadService from "../../services/upload.service"
+
 
 const NewExperienceForm = ({ fireFinalActions }) => {
 
@@ -12,6 +13,8 @@ const NewExperienceForm = ({ fireFinalActions }) => {
         descriptionExp: '',
     })
 
+    const [loadingImage, setLoadingImage] = useState(false)
+
     const handleInputChange = e => {
         const { name, value } = e.currentTarget
 
@@ -19,6 +22,22 @@ const NewExperienceForm = ({ fireFinalActions }) => {
             ...experienceData,
             [name]: value
         })
+    }
+
+    const handleImageUpload = e => {
+        setLoadingImage(true)
+
+        const uploadData = new FormData()
+        uploadData.append('imageData', e.target.files[0])
+
+        uploadService
+            .uploadImage(uploadData)
+            .then(({ data }) => {
+                setLoadingImage(false)
+                setExperienceData({ ...experienceData, imageExp: data.cloudinary_url })
+            })
+            .catch(err => console.log(err))
+
     }
 
     const hangleSubmit = e => {
@@ -33,7 +52,7 @@ const NewExperienceForm = ({ fireFinalActions }) => {
             .catch(err => console.log(err))
     }
 
-    const { name, place, price, imageExp, descriptionExp } = experienceData
+    const { name, place, price, descriptionExp } = experienceData
 
     return (
 
@@ -61,11 +80,11 @@ const NewExperienceForm = ({ fireFinalActions }) => {
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="imageExp">
-                <Form.Label>Image URL</Form.Label>
-                <Form.Control type="text" value={imageExp} onChange={handleInputChange} name="imageExp" />
+                <Form.Label>Experience Image</Form.Label>
+                <Form.Control type="text" onChange={handleImageUpload} />
             </Form.Group>
 
-            <Button variant="dark" type="submit">Crear montaña rusa</Button>
+            <Button variant="dark" type="submit">Create new experience</Button>
         </Form>
     )
 }

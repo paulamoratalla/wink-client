@@ -2,6 +2,8 @@ import { useState } from "react"
 import { Form, Button } from "react-bootstrap"
 import authService from "../../services/auth.service"
 import { useNavigate } from 'react-router-dom'
+import uploadService from "../../services/upload.service"
+
 
 const SignupForm = () => {
 
@@ -13,34 +15,54 @@ const SignupForm = () => {
         city: ''
     })
 
+    const [loadingImage, setLoadingImage] = useState(false)
+
     const navigate = useNavigate()
 
-    const handleSubmit = e => {
-        e.preventDefault()
-
-        authService
-            .signup(signupData)
-            .then(res => {
-                navigate('/signup')
-            })
-            .catch(err => console.log(err))
-    }
+    const { name, password, email, city } = signupData
 
     const handleInputChange = e => {
         const { value, name } = e.currentTarget
         setSignupData({ ...signupData, [name]: value })
     }
 
-    const { name, password, email, profileImg, city } = signupData
+
+    const handleImageUpload = e => {
+        setLoadingImage(true)
+
+        const uploadData = new FormData()
+        uploadData.append('imageData', e.target.files[0])
+
+        uploadService
+            .uploadImage(uploadData)
+            .then(({ data }) => {
+                setLoadingImage(false)
+                setSignupData({ ...signupData, profileImg: data.cloudinary_url })
+            })
+            .catch(err => console.log(err))
+
+    }
+
+
+    const handleSubmit = e => {
+        e.preventDefault()
+
+        authService
+            .signup({ ...signupData })
+            .then(res => {
+                navigate('/login')
+            })
+            .catch(err => console.log(err))
+    }
+
+
+
+
+
+
 
     return (
-        // <Container>
-        //     <Button className="big-btn" onClick={openLogInModal}>Log In</Button>
-        //     <Modal className="my-modal" centered='true' show={showLogInModal} onHide={handleLogInModal} size="lg">
-        //         <Modal.Header closeButton>
-        //             <h3>Hello!</h3>
-        //         </Modal.Header>
-        //         <Modal.Body scrollable='true'>
+
         <Form onSubmit={handleSubmit}>
 
             <Form.Group className="mb-3" controlId="name">
@@ -60,7 +82,7 @@ const SignupForm = () => {
 
             <Form.Group className="mb-3" controlId="profileImg">
                 <Form.Label>Profile Image</Form.Label>
-                <Form.Control type="file" onChange={handleInputChange} name="profileImg" value={profileImg} />
+                <Form.Control type="file" onChange={handleImageUpload} />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="city">
@@ -73,12 +95,8 @@ const SignupForm = () => {
                 <label class="form-check-label" for="exampleCheck1">I am 18 years or older</label>
             </div>
 
-            <Button variant="dark" type="submit">Sign up</Button>
+            <Button variant="dark" type="submit" disabled={loadingImage}>{loadingImage ? 'Loading Image...' : 'Sign up'}</Button>
         </Form>
-
-        //         </Modal.Body >
-        //     </Modal >
-        // </Container >
 
     )
 }
