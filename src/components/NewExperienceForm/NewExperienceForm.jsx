@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Form, Buttom } from "react-bootstrap"
+import { Form, Button } from "react-bootstrap"
 import uploadService from "../../services/upload.service"
 
 
@@ -40,11 +40,11 @@ const NewExperienceForm = ({ fireFinalActions }) => {
 
     }
 
-    const hangleSubmit = e => {
+    const handleSubmit = e => {
 
         e.preventDefault()
 
-        experienceDefault()
+            .experienceDefault()
             .saveExperience(experienceData)
             .then(response => {
                 fireFinalActions()
@@ -84,7 +84,7 @@ const NewExperienceForm = ({ fireFinalActions }) => {
                 <Form.Control type="text" onChange={handleImageUpload} />
             </Form.Group>
 
-            <Button variant="dark" type="submit">Create new experience</Button>
+            <Button variant="dark" type="submit" disabled={loadingImage}>{loadingImage ? 'Uploading image...' : 'Create new Experience'}</Button>
         </Form>
     )
 }

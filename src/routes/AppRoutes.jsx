@@ -4,8 +4,6 @@ import HomePage from '../pages/HomePage/HomePage'
 import ExperienceDetailsPage from '../pages/ExperienceDetailsPage/ExperienceDetailsPage'
 import LandingPage from '../pages/LandingPage/LandingPage'
 import ProfilePage from '../pages/ProfilePage/ProfilePage'
-import SignupPage from "../pages/SignupPage/SignupPage"
-import HomePage from "../pages/HomePage/HomePage"
 import ExperiencesPage from "../pages/ExperiencesPage/ExperiencesPage"
 
 import { Routes, Route } from "react-router-dom"
@@ -43,7 +41,7 @@ const AppRoutes = () => {
             <Route path='/' element={<LandingPage />} />
             <Route path='/home' element={<HomePage />} />
             <Route path='/experiences' element={<ExperiencesPage />} />
-            <Route path='/experiences/details' element={<ExperienceDetailsPage />} />
+            <Route path='/experience/:id' element={<ExperienceDetailsPage />} />
             <Route path='/profile' element={<ProfilePage />} />
         </Routes>
     )
