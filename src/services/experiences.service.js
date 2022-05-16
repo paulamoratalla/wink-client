@@ -22,11 +22,11 @@ class ExperiencesService {
     }
 
     getAllExperiences = () => {
-        return this.api.get('/')
+        return this.api.get('/list')
     }
 
-    getOneExperience = id => {
-        return this.api.get(`/${id}`)
+    getOneExperience = _id => {
+        return this.api.get(`/${_id}`)
     }
 
     deleteOneExperience = id => {
