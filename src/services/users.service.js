@@ -22,11 +22,11 @@ class UsersService {
         return this.api.get('/all')
     }
 
-    getOneUser = (id) => {
+    getOneUser = id => {
         return this.api.get(`${id}`)
     }
 
-    deleteUser = (id) => {
+    deleteUser = id => {
         return this.api.delete(`/${id}/delete`)
     }
 

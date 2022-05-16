@@ -40,7 +40,7 @@ function ExperienceDetailsPage() {
                 <hr />
                 <Row>
                     <Col md={{ span: 4, offset: 1 }}>
-                        <h3>{experienceDetails.place}</h3>
+                        <h3>{place}</h3>
                         <p>{descriptionExp}</p>
                         <p>{price}€</p>
                     </Col>

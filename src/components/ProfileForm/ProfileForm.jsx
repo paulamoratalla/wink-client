@@ -10,7 +10,6 @@ const ProfileForm = ({ fireFinalActions }) => {
         profileImg: '',
         name: '',
         email: '',
-        password: '',
         modality: '',
         birth: '',
         identity: '',
@@ -27,7 +26,11 @@ const ProfileForm = ({ fireFinalActions }) => {
         religion: '',
         political: '',
     })
+
+
     const [loadingImage, setLoadingImage] = useState(false)
+
+
     const handleInputChange = e => {
         const { name, value } = e.currentTarget
         setProfileData({
@@ -58,16 +61,21 @@ const ProfileForm = ({ fireFinalActions }) => {
 
 
     const handleSubmit = e => {
+
         e.preventDefault()
 
-            .userDefault()
-            .saveUser(profileData)
+        usersService
+            .updateOneUser(profileData)
             .then(() => {
                 fireFinalActions()
             })
             .catch(err => console.log(err))
     }
+
+
     const { name, email, modality, birth, identity, city, interestedGender, height, exercise, zodiac, education, drink, smoke, lookingFor, children, religion, political } = profileData
+
+
     return (
         <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="profileImg">
@@ -210,7 +218,7 @@ const ProfileForm = ({ fireFinalActions }) => {
                 </Form.Control>
             </Form.Group>
 
-            <Button variant="dark" type="submit" disabled={loadingImage}>{loadingImage ? 'Uploading image...' : 'Create Profile'}</Button>
+            <Button variant="dark" type="submit" disabled={loadingImage}>{loadingImage ? 'Uploading image...' : 'Save Profile'}</Button>
         </Form >
     )
 }

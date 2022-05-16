@@ -48,8 +48,6 @@ const NewExperienceForm = ({ fireFinalActions }) => {
     }
 
     const handleSubmit = e => {
-        console.log(experienceData)
-
 
         e.preventDefault()
 
