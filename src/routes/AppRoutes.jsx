@@ -3,6 +3,7 @@ import SignupPage from "../pages/SignupPage/SignupPage"
 import FeedPage from '../pages/FeedPage/FeedPage'
 import ExperienceDetailsPage from '../pages/ExperienceDetailsPage/ExperienceDetailsPage'
 import HomePage from '../pages/HomePage/HomePage'
+import ExperienceDetailsPage from '../pages/ExperienceDetailsPage/ExperienceDetailsPage'
 import ProfilePage from '../pages/ProfilePage/ProfilePage'
 import ExperiencesPage from "../pages/ExperiencesPage/ExperiencesPage"
 
@@ -13,6 +14,10 @@ import { AuthContext } from '../context/auth.context'
 import PrivateRoute from "./PrivateRoute"
 import CheckoutForm from "../components/CheckoutForm/CheckoutForm"
 import ExperienceDetailsCard from "../components/ExperienceDetailsCard/ExperienceDetailsCard"
+import HomePage from "../pages/HomePage/HomePage"
+import FeedPage from "../pages/FeedPage/FeedPage"
+import ProfileForm from "../components/ProfileForm/ProfileForm"
+
 
 
 const AppRoutes = () => {
@@ -41,6 +46,11 @@ const AppRoutes = () => {
             <Route path='/experiences' element={<PrivateRoute />} >
                 <Route path='' element={<ExperiencesPage />} />
             </Route>
+            <Route path='/experience/:_id' element={<PrivateRoute />} >
+                <Route path='' element={<ExperienceDetailsPage />} />
+            </Route>
+
+            <Route path='/profile' element={<ProfilePage />}></Route>
 
             <Route path='/profile' element={<PrivateRoute />} >
                 <Route path='' element={<ProfilePage />} />
@@ -60,12 +70,16 @@ const AppRoutes = () => {
             <Route path='/checkout' element={<CheckoutForm />} />
             <Route path='/experience-buy' element={<ExperienceDetailsCard />} />
 
+            {/* PRUEBAS */}
+
+            <Route path='/profile-form' element={<ProfileForm />} />
+
+
         </Routes>
     )
 
 
 }
-
 
 
 export default AppRoutes

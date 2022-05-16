@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import experiencesService from '../../services/experiences.service'
 import { Container, Row, Col, Button } from 'react-bootstrap'
@@ -11,13 +11,15 @@ function ExperienceDetailsPage() {
 
     const [experienceDetails, setExperienceDetails] = useState({})
 
-    const { experience_id } = useParams()
+    const { _id } = useParams()
 
-    useEffect(() => loadExperience(), [])
+    console.log('EL ID HOLAAAA', _id)
+
+    useEffect(() => loadExperience(), [_id])
 
     const loadExperience = () => {
         experiencesService
-            .getOneExperience(experience_id)
+            .getOneExperience(_id)
             .then(({ data }) => setExperienceDetails(data))
             .catch(err => console.log(err))
 
@@ -38,14 +40,14 @@ function ExperienceDetailsPage() {
                 <hr />
                 <Row>
                     <Col md={{ span: 4, offset: 1 }}>
-                        <h3>{place}</h3>
+                        <h3>{experienceDetails.place}</h3>
                         <p>{descriptionExp}</p>
                         <p>{price}€</p>
                     </Col>
                     <Col md={{ span: 6 }}>
                         <img style={{ width: '100%' }} src={imageExp} alt={name} />
                     </Col>
-                    <Link to="/">
+                    <Link to="/experiences">
                         <Button variant="dark">Back to experiences</Button>
                     </Link>
                 </Row>
