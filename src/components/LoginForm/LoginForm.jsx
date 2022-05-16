@@ -4,7 +4,6 @@ import authService from "../../services/auth.service"
 import { useNavigate } from 'react-router-dom'
 import { AuthContext } from './../../context/auth.context'
 
-
 const Loginform = ({ changeModalContent }) => {
 
     const [loginData, setLoginData] = useState({

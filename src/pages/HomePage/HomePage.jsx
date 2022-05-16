@@ -28,7 +28,7 @@ const HomePage = () => {
                 title={modalInfo.content === 'login' ? 'Iniciar sesión' : 'Registro'}
             >
                 {modalInfo.content === 'login' && <Loginform changeModalContent={changeModalContent} />}
-                {modalInfo.content === 'signup' && <SignupForm />}
+                {modalInfo.content === 'signup' && <SignupForm changeModalContent={changeModalContent} />}
             </ModalWindow>
 
         </Container>

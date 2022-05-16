@@ -1,4 +1,4 @@
-import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
+import { Navbar, Container, Nav, NavDropdown, Figure } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
 import { AuthContext } from '../../context/auth.context'
 import { useContext } from 'react'
@@ -16,28 +16,33 @@ const Navigation = () => {
                     <Nav className="me-auto">
                         <NavLink to="/" className="nav-link">Home</NavLink>
                         <NavLink to="/feed" className="nav-link">Feed</NavLink>
-                        <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                        <NavDropdown title="User" id="basic-nav-dropdown">
+                            <NavDropdown.Item to="#action/3.1">My profile</NavDropdown.Item>
+                            <NavDropdown.Item to="#action/3.2">Settings</NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                            <NavDropdown.Item onClick={logOutUser}>Log out</NavDropdown.Item>
                         </NavDropdown>
-                        {
-                            isLoggedIn
-                                ?
-                                <div className="nav-link" onClick={logOutUser}>Log out</div>
-                                :
-                                <>
-                                    <NavLink to="/signup" className="nav-link">Sign up</NavLink>
-                                    <NavLink to="/login" className="nav-link">Log in</NavLink>
-                                </>
-                        }
-
-                        {
-                            user && <NavLink to="/perfil" className="nav-link justify-content-end">Hello! {user.profileImg} {user.name}</NavLink>
-                        }
                     </Nav>
+
+                    {
+                        isLoggedIn
+                            ?
+                            user && <NavLink to="/profile" className="nav-link justify-content-end">Hello! {user.name}
+                                <Figure>
+                                    <Figure.Image
+                                        width={50}
+                                        height={50}
+                                        alt="user picture"
+                                        src={user.profileImg}
+                                    />
+                                </Figure>
+                            </NavLink>
+                            :
+                            <>
+                                <NavLink to="/signup" className="nav-link">Sign up</NavLink>
+                                <NavLink to="/login" className="nav-link">Log in</NavLink>
+                            </>
+                    }
                 </Navbar.Collapse>
             </Container>
         </Navbar>

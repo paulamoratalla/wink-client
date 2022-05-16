@@ -1,58 +1,34 @@
-import { useState } from "react"
-import { Form, Button } from "react-bootstrap"
-import uploadService from "../../services/upload.service"
+import { useState } from "react";
+import { Form, Button } from 'react-bootstrap'
+import uploadService from "../../services/upload.service";
 
-const NewExperienceForm = ({ fireFinalActions }) => {
+const WinkdateForm = ({ fireFinalActions }) => {
 
-    const [experienceData, setExperienceData] = useState({
-        name: '',
-        place: '',
-        price: 0,
-        imageExp: '',
-        descriptionExp: '',
+    const [winkdateData, setWinkdateData] = useState({
+        experience: '',
+        date: '',
+        lover: '',
+        creator: '',
     })
-
-    const [loadingImage, setLoadingImage] = useState(false)
-    const handleInputChange = e => {
-        const { name, value } = e.currentTarget
-        setExperienceData({
-            ...experienceData,
-            [name]: value
-        })
-    }
-
-    const handleImageUpload = e => {
-
-        setLoadingImage(true)
-        const uploadData = new FormData()
-        uploadData.append('imageData', e.target.files[0])
-        uploadService
-            .uploadImage(uploadData)
-            .then(({ data }) => {
-                setLoadingImage(false)
-                setExperienceData({ ...experienceData, imageExp: data.cloudinary_url })
-            })
-            .catch(err => console.log(err))
-    }
 
     const handleSubmit = e => {
         e.preventDefault()
 
-            .experienceDefault()
-            .saveExperience(experienceData)
+            .winkdateDefault()
+            .saveWinkdate(winkdateData)
             .then(response => {
                 fireFinalActions()
             })
             .catch(err => console.log(err))
     }
 
-    const { name, place, price, descriptionExp } = experienceData
+    const { experience, date, lover, creator } = winkdateData
 
     return (
         <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" controlId="name">
-                <Form.Label>Name</Form.Label>
-                <Form.Control type="text" value={name} onChange={handleInputChange} name="name" />
+            <Form.Group className="mb-3" controlId="experience">
+                <Form.Label>Experience</Form.Label>
+                <Form.Control type="text" value={name} onChange={handleInputChange} name="experience" />
             </Form.Group>
             <Form.Group className="mb-3" controlId="place">
                 <Form.Label>Place</Form.Label>
@@ -77,4 +53,6 @@ const NewExperienceForm = ({ fireFinalActions }) => {
     )
 }
 
-export default NewExperienceForm
+export default WinkdateForm
+
+
