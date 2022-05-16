@@ -5,7 +5,6 @@ import SignupForm from "../../components/SignupForm/SignupForm"
 import ModalWindow from "../../components/ModalWindow/ModalWindow"
 
 
-
 const HomePage = () => {
 
     const [modalInfo, setModalInfo] = useState({
@@ -19,6 +18,9 @@ const HomePage = () => {
 
     return (
         <Container>
+
+            Home Page 
+            <br/>
 
             <Button className="big-btn" onClick={openModal}>Log In</Button>
 

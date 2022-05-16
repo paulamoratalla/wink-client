@@ -1,17 +1,30 @@
-import { Card } from 'react-bootstrap'
+import { Container, Card, Button } from 'react-bootstrap'
+import CheckoutForm from '../CheckoutForm/CheckoutForm'
+import { useState } from 'react';
 
 const ExperienceDetailsCard = ({ name, place, price, imageExp, descriptionExp }) => {
 
+    const [showExperience, setShowExperience] = useState(false);
+
     return (
+        <Container>
         <Card className="ExperienceDetailsCard">
             <Card.Img variant="top" src={imageExp} alt="Experience card details" />
             <Card.Body>
-                <Card.Title>{name}</Card.Title>
+                <Card.Title>{name} Prueba</Card.Title>
+                {showExperience ? (
+                    <CheckoutForm />
+                ) : (
+                    <>
                 <h6 class="card-subtitle mb-2 text-muted">{place}</h6>
                 <p class="card-text">{descriptionExp}</p>
-                <p class="card-text">{price}</p>
+                <p class="card-text">{price} $10.00</p>
+                            <Button onClick={() => setShowExperience(true)}>Buy experience</Button>
+                    </>
+                )}
             </Card.Body>
         </Card>
+        </Container>
     )
 }
 
