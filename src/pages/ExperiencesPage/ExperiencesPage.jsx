@@ -1,18 +1,23 @@
-import { Container, Modal, Button } from 'react-bootstrap'
+import { Container, Button } from 'react-bootstrap'
 import { useContext, useEffect, useState } from "react"
 import { AuthContext } from './../../context/auth.context'
 import ExperiencesList from '../../components/ExperiencesList/ExperiencesList'
 import NewExperienceForm from '../../components/NewExperienceForm/NewExperienceForm'
 import experiencesService from '../../services/experiences.service'
+import ModalWindow from '../../components/ModalWindow/ModalWindow'
 
 
 const ExperiencesPage = () => {
 
-    const [showModal, setShowModal] = useState(false)
+    const [modalInfo, setModalInfo] = useState({
+        show: false,
+        content: 'New Experience'
+    })
+
     const [experiences, setExperiences] = useState([])
 
-    const openModal = () => setShowModal(true)
-    const closeModal = () => setShowModal(false)
+    const openModal = () => setModalInfo({ ...modalInfo, show: true })
+    const closeModal = () => setModalInfo({ ...modalInfo, show: false })
 
     useEffect(() => loadExperiences(), [])
 
@@ -40,16 +45,17 @@ const ExperiencesPage = () => {
                 <ExperiencesList experiences={experiences} />
             </Container>
 
-            <Modal show={showModal} onHide={closeModal}>
-                <Modal.Header closeButton>
-                    <Modal.Title>New Experience</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <NewExperienceForm fireFinalActions={fireFinalActions} />
-                </Modal.Body>
-            </Modal>
+            <ModalWindow
+                modalInfo={modalInfo}
+                closeModal={closeModal}
+                title='New Experience'
+            >
+                {modalInfo.content === 'New Experience' && <NewExperienceForm fireFinalActions={fireFinalActions} />}
+            </ModalWindow>
+
         </>
     )
 }
 
 export default ExperiencesPage
+

@@ -1,15 +1,16 @@
-import { Card, Button } from 'react-bootstrap'
+import { Button, Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 
-const ExperienceCard = ({ name, imageExp, id }) => {
+const ExperienceCard = ({ _id, name, imageExp, price }) => {
 
     return (
         <Card className="ExperienceCard">
             <Card.Img variant="top" src={imageExp} alt="Experience card" />
             <Card.Body>
-                <Card.Title>{name}</Card.Title>
-                <Link to={`/experience/${id}`}>
+                <Card.Title>{name} </Card.Title>
+                <h3>{price}</h3>
+                <Link to={`/experience/${_id}`}>
                     <div className="d-grid gap-2">
                         <Button variant="dark">See Details</Button>
                     </div>

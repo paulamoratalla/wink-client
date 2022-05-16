@@ -1,6 +1,10 @@
 import { useState } from "react"
 import { Form, Button } from "react-bootstrap"
+import { useNavigate } from "react-router-dom"
+import experiencesService from "../../services/experiences.service"
 import uploadService from "../../services/upload.service"
+
+
 
 const NewExperienceForm = ({ fireFinalActions }) => {
 
@@ -13,8 +17,14 @@ const NewExperienceForm = ({ fireFinalActions }) => {
     })
 
     const [loadingImage, setLoadingImage] = useState(false)
+
+    const { name, place, price, descriptionExp } = experienceData
+
+    const navigate = useNavigate()
+
     const handleInputChange = e => {
         const { name, value } = e.currentTarget
+
         setExperienceData({
             ...experienceData,
             [name]: value
@@ -24,8 +34,10 @@ const NewExperienceForm = ({ fireFinalActions }) => {
     const handleImageUpload = e => {
 
         setLoadingImage(true)
+
         const uploadData = new FormData()
         uploadData.append('imageData', e.target.files[0])
+
         uploadService
             .uploadImage(uploadData)
             .then(({ data }) => {
@@ -36,19 +48,26 @@ const NewExperienceForm = ({ fireFinalActions }) => {
     }
 
     const handleSubmit = e => {
+        console.log(experienceData)
+
+
         e.preventDefault()
 
-            .experienceDefault()
-            .saveExperience(experienceData)
-            .then(response => {
+        experiencesService
+            .createOneExperience(experienceData)
+            .then(() => {
+                navigate('/')
                 fireFinalActions()
             })
             .catch(err => console.log(err))
     }
 
-    const { name, place, price, descriptionExp } = experienceData
+
+
 
     return (
+
+
         <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="name">
                 <Form.Label>Name</Form.Label>
@@ -57,7 +76,6 @@ const NewExperienceForm = ({ fireFinalActions }) => {
             <Form.Group className="mb-3" controlId="place">
                 <Form.Label>Place</Form.Label>
                 <Form.Control type="text" value={place} onChange={handleInputChange} name="place" />
-                <Form.Text className="text-muted">Minimum length 50 characters</Form.Text>
             </Form.Group>
             <Form.Group className="mb-3" controlId="price">
                 <Form.Label>Price</Form.Label>
@@ -70,7 +88,7 @@ const NewExperienceForm = ({ fireFinalActions }) => {
             </Form.Group>
             <Form.Group className="mb-3" controlId="imageExp">
                 <Form.Label>Experience Image</Form.Label>
-                <Form.Control type="text" onChange={handleImageUpload} />
+                <Form.Control type="file" onChange={handleImageUpload} />
             </Form.Group>
             <Button variant="dark" type="submit" disabled={loadingImage}>{loadingImage ? 'Uploading image...' : 'Create new Experience'}</Button>
         </Form >
