@@ -4,7 +4,7 @@ const ExperienceCard = ({ name, imageExp }) => {
 
     return (
         <Card className="ExperienceCard">
-            <Card.Img variant="top" src={imageExp} alt="Experience card" />
+            <Card.Img variant="top" src={imageExp} alt={name} />
             <Card.Body>
                 <Card.Title>{name}</Card.Title>
                 <Link to={`/experience/${id}`}>
