@@ -1,7 +1,8 @@
 const FeedPage = () => {
   return (
-    <div>Feed Page</div>
+    <h1>SOY EL FEED</h1>
   )
 }
+
 
 export default FeedPage
