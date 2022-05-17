@@ -3,6 +3,9 @@ import { useState } from "react"
 import Loginform from "../../components/LoginForm/LoginForm"
 import SignupForm from "../../components/SignupForm/SignupForm"
 import ModalWindow from "../../components/ModalWindow/ModalWindow"
+import Steps from '../../components/Steps/Steps'
+import Fade from 'react-reveal/Fade';
+import './HomePage.css'
 
 
 const HomePage = () => {
@@ -17,23 +20,30 @@ const HomePage = () => {
     const changeModalContent = content => setModalInfo({ ...modalInfo, content })
 
     return (
-        <Container>
+        <div>
+            <div className="home">
+                <div className="hero">
+                    <img className="bgImg" src='/background.png'></img>
+                </div>
 
-            Home Page 
-            <br/>
+                <Container class="container1">
 
-            <Button className="big-btn" onClick={openModal}>Log In</Button>
+                    <ModalWindow
+                        modalInfo={modalInfo}
+                        closeModal={closeModal}
+                        title={modalInfo.content === 'login' ? 'Iniciar sesión' : 'Registro'}
+                    >
+                        {modalInfo.content === 'login' && <Loginform changeModalContent={changeModalContent} />}
+                        {modalInfo.content === 'signup' && <SignupForm changeModalContent={changeModalContent} />}
+                    </ModalWindow>
 
-            <ModalWindow
-                modalInfo={modalInfo}
-                closeModal={closeModal}
-                title={modalInfo.content === 'login' ? 'Iniciar sesión' : 'Registro'}
-            >
-                {modalInfo.content === 'login' && <Loginform changeModalContent={changeModalContent} />}
-                {modalInfo.content === 'signup' && <SignupForm changeModalContent={changeModalContent} />}
-            </ModalWindow>
+                </Container>
+                <Button className="button" onClick={openModal}>Create an account</Button>
 
-        </Container>
+            </div>
+            <Steps />
+        </div >
+
     )
 }
 

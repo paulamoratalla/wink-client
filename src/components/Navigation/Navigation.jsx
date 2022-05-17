@@ -2,28 +2,30 @@ import { Navbar, Container, Nav, NavDropdown, Figure } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
 import { AuthContext } from '../../context/auth.context'
 import { useContext } from 'react'
+import './Navigation.css'
 
 const Navigation = () => {
 
     const { user, logOutUser, isLoggedIn } = useContext(AuthContext)
 
     return (
-        <Navbar bg="light" expand="lg">
+        <Navbar className="navbar" expand="lg" >
             <Container>
-                <Navbar.Brand to="/">Wink_</Navbar.Brand>
+                <NavLink to="/">
+                    <Navbar.Brand as="span"><img className="logo" src='/winklogo.png' ></img></Navbar.Brand>
+                </NavLink>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
+<<<<<<< HEAD
                         <NavLink to="/" className="nav-link">Home</NavLink>
                         <NavLink to="/experiences" className="nav-link">Experiences</NavLink>
                         <NavLink to="/profile" className="nav-link">Profile</NavLink>
+=======
+>>>>>>> 976ba581fa41a9fa06101cdd802c23e036a2db6f
                         <NavLink to="/feed" className="nav-link">Feed</NavLink>
-                        <NavDropdown title="User" id="basic-nav-dropdown">
-                            <NavDropdown.Item to="#action/3.1">My profile</NavDropdown.Item>
-                            <NavDropdown.Item to="#action/3.2">Settings</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item onClick={logOutUser}>Log out</NavDropdown.Item>
-                        </NavDropdown>
+                        <NavLink to="/experiences" className="nav-link">Experiences</NavLink>
+                        <NavLink to="/profile" className="nav-link">My profile</NavLink>
                     </Nav>
 
                     {
@@ -38,6 +40,12 @@ const Navigation = () => {
                                         src={user.profileImg}
                                     />
                                 </Figure>
+                                <NavDropdown title="" id="basic-nav-dropdown">
+                                    <NavDropdown.Item to="/profile">My profile</NavDropdown.Item>
+                                    <NavDropdown.Item to="#action/3.2">Settings</NavDropdown.Item>
+                                    <NavDropdown.Divider />
+                                    <NavDropdown.Item onClick={logOutUser}>Log out</NavDropdown.Item>
+                                </NavDropdown>
                             </NavLink>
                             :
                             <>
