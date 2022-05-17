@@ -1,0 +1,12 @@
+.ProfileCard {
+    margin-bottom: 30px;
+}
+
+.ProfileCard img {
+    height: 100px;
+    object-fit: cover;
+}
+
+p {
+    font-weight: 800;
+}
