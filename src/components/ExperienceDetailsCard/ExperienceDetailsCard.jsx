@@ -7,7 +7,6 @@ const ExperienceDetailsCard = ({ name, place, price, imageExp, descriptionExp })
     const [showExperience, setShowExperience] = useState(false);
 
     return (
-        <Container>
         <Card className="ExperienceDetailsCard">
             <Card.Img variant="top" src={imageExp} alt="Experience card details" />
             <Card.Body>
@@ -24,7 +23,6 @@ const ExperienceDetailsCard = ({ name, place, price, imageExp, descriptionExp })
                 )}
             </Card.Body>
         </Card>
-        </Container>
     )
 }
 
