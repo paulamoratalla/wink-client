@@ -29,12 +29,12 @@ class ExperiencesService {
         return this.api.get(`/${_id}`)
     }
 
-    deleteOneExperience = id => {
-        return this.api.delete(`/${id}/delete`)
+    deleteOneExperience = _id => {
+        return this.api.delete(`/${_id}/delete`)
     }
 
-    updaOneExperience = (id, experienceData) => {
-        return this.api.put(`/${id}/edit`, experienceData)
+    updateOneExperience = (_id, experienceData) => {
+        return this.api.put(`/${_id}/edit`, experienceData)
     }
 }
 

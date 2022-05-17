@@ -24,7 +24,9 @@ const ExperiencesPage = () => {
     const loadExperiences = () => {
         experiencesService
             .getAllExperiences()
-            .then(({ data }) => setExperiences(data))
+            .then(({ data }) => {
+                setExperiences(data)
+            })
             .then(err => console.log(err))
     }
 

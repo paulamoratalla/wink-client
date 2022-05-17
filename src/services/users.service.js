@@ -4,11 +4,11 @@ class UsersService {
 
     constructor() {
 
-        this.api = axios.create({ baseurl: `${process.env.REACT_APP_API_URL}/user` })
+        this.api = axios.create({ baseURL: `${process.env.REACT_APP_API_URL}/user` })
 
         this.api.interceptors.request.use((config) => {
 
-            const storedToken = localStorage.getItem('authToken')
+            const storedToken = localStorage.getItem("authToken")
 
             if (storedToken) {
                 config.headers = { Authorization: `Bearer ${storedToken}` }
@@ -22,16 +22,20 @@ class UsersService {
         return this.api.get('/all')
     }
 
-    getOneUser = (id) => {
-        return this.api.get(`${id}`)
+    getOneUser = (_id) => {
+        return this.api.get(`/${_id}`)
     }
 
-    deleteUser = (id) => {
-        return this.api.delete(`/${id}/delete`)
+    getMyDetails = () => {
+        return this.api.get('/profile')
     }
 
-    updateOneUser = (id, userData) => {
-        return this.api.put(`/${id}/edit`, userData)
+    deleteUser = (_id) => {
+        return this.api.delete(`/${_id}/delete`)
+    }
+
+    updateOneUser = (_id, userData) => {
+        return this.api.put(`/${_id}/edit`, userData)
     }
 }
 
