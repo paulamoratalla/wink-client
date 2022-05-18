@@ -8,6 +8,8 @@ const ProfileCard = ({ _id, profileImg, name, email, modality, birth, identity, 
 
     const newDate = birth.slice(0, 10)
 
+    console.log('_id------->', _id)
+
     return (
         <Card className="ProfileCard">
             <Card.Img variant="top" src={profileImg} alt={name} />
@@ -16,7 +18,7 @@ const ProfileCard = ({ _id, profileImg, name, email, modality, birth, identity, 
                 <h6 className="card-subtitle mb-2 text-muted">{modality}</h6>
                 <p className="card-text">{email}</p>
                 <p className="card-text">Date of birth: {newDate}</p>
-                <p className="card-text">Identity: {identity}</p>
+                <p className="card-text">Gender: {identity}</p>
                 <p className="card-text">City: {city}</p>
                 <p className="card-text">Interested in: {interestedGender}</p>
                 <p className="card-text">Height: {height}</p>
@@ -30,9 +32,9 @@ const ProfileCard = ({ _id, profileImg, name, email, modality, birth, identity, 
                 <p className="card-text">Religious belief: {religion}</p>
                 <p className="card-text">Political ideology: {political}</p>
 
-                <Link to={`/feed`}>
+                <Link to={`/${_id}/edit-profile`}>
                     <div className="d-grid gap-2">
-                        <Button variant="dark">Go to my Feed</Button>
+                        <Button variant="dark">Edit my profile</Button>
                     </div>
                 </Link>
             </Card.Body>

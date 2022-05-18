@@ -2,17 +2,15 @@ import { Container, Button } from 'react-bootstrap'
 import ProfileCard from '../../components/ProfileCard/ProfileCard'
 import { useContext, useEffect, useState } from "react"
 import usersService from '../../services/users.service'
-import ProfileForm from '../../components/ProfileForm/ProfileForm'
 import { AuthContext } from '../../context/auth.context'
 import { useParams, Link } from 'react-router-dom'
 import Loader from '../../components/Loader/Loader'
 
 
 
-
 const ProfilePage = () => {
 
-    const [profile, setProfile] = useState([])
+    const [profile, setProfile] = useState({})
     const [isLoaded, setIsLoaded] = useState(false)
 
     const { user, isLoggedIn } = useContext(AuthContext)

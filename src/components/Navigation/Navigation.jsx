@@ -17,12 +17,6 @@ const Navigation = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-<<<<<<< HEAD
-                        <NavLink to="/" className="nav-link">Home</NavLink>
-                        <NavLink to="/experiences" className="nav-link">Experiences</NavLink>
-                        <NavLink to="/profile" className="nav-link">Profile</NavLink>
-=======
->>>>>>> 976ba581fa41a9fa06101cdd802c23e036a2db6f
                         <NavLink to="/feed" className="nav-link">Feed</NavLink>
                         <NavLink to="/experiences" className="nav-link">Experiences</NavLink>
                         <NavLink to="/profile" className="nav-link">My profile</NavLink>

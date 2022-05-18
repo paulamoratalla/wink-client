@@ -37,6 +37,11 @@ class UsersService {
     updateOneUser = (_id, userData) => {
         return this.api.put(`/${_id}/edit`, userData)
     }
+
+    uploadImages = (_id, galleryProfile) => {
+        return this.api.put(`/${_id}/upload-images`, galleryProfile)
+    }
+
 }
 
 const usersService = new UsersService()
