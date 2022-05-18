@@ -25,3 +25,33 @@ a.nav-link:active {
 .navbar-light.navbar-nav.nav-link {
     color: white;
 }
+
+.miniavatar {
+    border-radius: 50px;
+}
+
+button.createAccountButton.btn.btn-primary {
+    padding: 1em 1em;
+    font-size: 12px;
+    font-weight: 500;
+    color: white;
+    background-color: #F1B0CC;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    width: 100px;
+}
+
+button.createAccountButton.btn.btn-primary:hover {
+    background-color: #F1B0CC;
+    box-shadow: 0px 15px 20px #F1B0CC;
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+button.createAccountButton.btn.btn-primary:active {
+    transform: translateY(-1px);
+}

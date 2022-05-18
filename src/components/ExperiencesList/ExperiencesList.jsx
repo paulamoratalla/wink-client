@@ -11,7 +11,7 @@ const ExperiencesList = ({ experiences }) => {
                 {
                     experiences.map(experience => {
                         return (
-                            <Col md={{ span: 4 }} key={experience._id}>
+                            <Col key={experience._id}>
                                 <ExperienceCard {...experience} />
                             </Col>
                         )

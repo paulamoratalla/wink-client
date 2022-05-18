@@ -5,6 +5,7 @@ import ExperiencesList from '../../components/ExperiencesList/ExperiencesList'
 import NewExperienceForm from '../../components/NewExperienceForm/NewExperienceForm'
 import experiencesService from '../../services/experiences.service'
 import ModalWindow from '../../components/ModalWindow/ModalWindow'
+import './ExperiencesPage.css'
 
 
 const ExperiencesPage = () => {
@@ -41,9 +42,9 @@ const ExperiencesPage = () => {
     return (
         <>
             <Container>
-                <h1>Experiences</h1>
+                <h1 className='experienceslisttitle'>Our best experiences</h1>
                 {isLoggedIn && <Button onClick={openModal}>Create new Experience</Button>}
-                <hr />
+
                 <ExperiencesList experiences={experiences} />
             </Container>
 

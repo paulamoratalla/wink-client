@@ -1,5 +1,5 @@
 import './Footer.css'
 
-const Footer = () => <footer>Todos los derechos reservados</footer>
+const Footer = () => <footer> © Wink by Roberto, Carmen & Paula</footer>
 
 export default Footer

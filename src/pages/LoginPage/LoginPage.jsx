@@ -1,5 +1,6 @@
 import { Container, Row, Col } from 'react-bootstrap'
 import Loginform from '../../components/LoginForm/LoginForm'
+import './LoginPage.css'
 
 
 

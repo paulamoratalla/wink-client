@@ -3,6 +3,7 @@ import { Form, Button } from "react-bootstrap"
 import authService from "../../services/auth.service"
 import { useNavigate } from 'react-router-dom'
 import { AuthContext } from './../../context/auth.context'
+import './LoginForm.css'
 
 const Loginform = ({ changeModalContent }) => {
 
@@ -48,11 +49,12 @@ const Loginform = ({ changeModalContent }) => {
                 <Form.Label>Password</Form.Label>
                 <Form.Control type="password" onChange={handleInputChange} name="password" value={password} />
             </Form.Group>
-            <Button variant="dark" type="submit">Log in</Button>
+
+            <Button className="loginbutton" type="submit">Log in</Button>
+
             <div class="text-center">
-                <p>Don't have an account yet? <button onClick={() => changeModalContent('signup')}> Sign up</button></p>
+                <p>Don't have an account yet? <button className="signupbutton" onClick={() => changeModalContent('signup')}> Sign up</button></p>
             </div>
-            {/* <Button className="big-btn" onClick={openSignUpModal}>Log In</Button> */}
 
         </Form>
 
