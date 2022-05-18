@@ -2,7 +2,6 @@
     position: fixed;
     width: 100%;
     padding: 15px;
-    background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(16px) brightness(105%);
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
@@ -15,7 +14,7 @@
 }
 
 a.nav-link {
-    color: white;
+    color: black;
 }
 
 a.nav-link:active {

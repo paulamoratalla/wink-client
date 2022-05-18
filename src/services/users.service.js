@@ -37,6 +37,18 @@ class UsersService {
     updateOneUser = (_id, userData) => {
         return this.api.put(`/${_id}/edit`, userData)
     }
+
+    addToMatch = (_id) => {
+        return this.api.post(`/${_id}/add`)
+    }
+
+    removeMatch = (_id) => {
+        return this.api.post(`/${_id}/remove`)
+    }
+    uploadImages = (_id, galleryProfile) => {
+        return this.api.put(`/${_id}/upload-images`, galleryProfile)
+    }
+
 }
 
 const usersService = new UsersService()

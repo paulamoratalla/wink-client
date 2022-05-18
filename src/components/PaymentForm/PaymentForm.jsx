@@ -81,38 +81,8 @@ const PaymentForm = () => {
                     </Col>
                 </Row>
             </Container>
-
         </>
     )
 }
 
 export default PaymentForm
-
-//     < Container >
-//                 <h1>{name}</h1>
-//                 <hr />
-// {
-//     showExperience ? (
-//         <CheckoutForm />
-//     ) : (
-//         <Row>
-//             <Col className='mb-3' md={{ span: 4, offset: 1 }}>
-//                 <h3>{experienceDetails.place}</h3>
-//                 <p>{descriptionExp}</p>
-//                 <p>${price} USD</p>
-//                 <Button className='mb-3' onClick={() => setShowExperience(true)}>Buy experience</Button>
-//                 <Link to="/experiences">
-//                     <Button variant="dark">Back to experiences</Button>
-//                 </Link>
-//                 <Link to='/{:_id}/delete'>
-//                     <Button variant="dark">Delete</Button>
-//                 </Link>
-//             </Col>
-//             <Col className='mb-3' md={{ span: 6 }}>
-//                 <img style={{ width: '100%' }} src={imageExp} alt={name} />
-//             </Col>
-
-//         </Row>
-//     )
-// }
-//             </Container >
