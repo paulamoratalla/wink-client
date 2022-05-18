@@ -14,8 +14,10 @@ import ExperienceDetailsCard from "../components/ExperienceDetailsCard/Experienc
 import ProfileForm from "../components/ProfileForm/ProfileForm"
 import ProfileCard from "../components/ProfileCard/ProfileCard"
 import WinkerCard from "../components/WinkerCard/WinkerCard"
+import ProfileFormEdit from "../components/ProfileFormEdit/ProfileFormEdit"
+
 const AppRoutes = () => {
-    const { user } = useContext(AuthContext)
+
     return (
         <Routes>
             <Route path='/' element={<HomePage />} />
@@ -41,6 +43,16 @@ const AppRoutes = () => {
                 <Route path='' element={<ProfilePage />} />
             </Route>
             <Route path='/winker-card' element={<WinkerCard />} />
+            {/* <Route path='/profile/:_id' element={<ProfileForm />} /> */}
+            <Route path='/profile' element={<PrivateRoute />} >
+                <Route path='' element={<ProfilePage />} />
+            </Route>
+            <Route path='/:_id/edit-profile' element={<PrivateRoute />} >
+                <Route path='' element={<ProfileFormEdit />} />
+            </Route>
+
+
+
         </Routes>
     )
 }
