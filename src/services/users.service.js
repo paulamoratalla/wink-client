@@ -45,8 +45,13 @@ class UsersService {
     removeMatch = (_id) => {
         return this.api.post(`/${_id}/remove`)
     }
+
     uploadImages = (_id, galleryProfile) => {
         return this.api.put(`/${_id}/upload-images`, galleryProfile)
+    }
+
+    deleteOneImage = (id, galleryProfile) => {
+        return this.api.put(`/${id}/edit-image`, galleryProfile)
     }
 
 }

@@ -5,11 +5,12 @@ import { useParams } from 'react-router-dom'
 import usersService from '../../services/users.service'
 
 
+
 const GalleryProfileForm = ({ closeModal, refreshDetails }) => {
 
 
     const [galleryProfile, setGalleryProfile] = useState({
-        images: []
+        gallery: []
     })
     const [loadingImage, setLoadingImage] = useState(false)
 
@@ -25,39 +26,39 @@ const GalleryProfileForm = ({ closeModal, refreshDetails }) => {
         }
 
         uploadService
-            .uploadImage(formData)
+            .uploadImages(formData)
             .then(({ data }) => {
                 setLoadingImage(false)
-                setGalleryProfile({ ...galleryProfile, images: data.cloudinary_urls })
+                setGalleryProfile({ ...galleryProfile, gallery: data.cloudinary_urls })
             })
-            .catch(err => console.log(err))
+
 
     }
 
-    function handleSubmit(e) {
-        e.preventDefault()
+    function saveImages() {
 
         usersService
             .uploadImages(_id, galleryProfile)
             .then(() => {
-                closeModal()
-                refreshDetails()
+
             })
+            .catch(err => console.log(err))
     }
 
     return (
+        <>
+            <Form>
+                <Form.Group className="mb-3" controlId="gallery">
+                    <Form.Label>Photo gallery</Form.Label>
+                    <Form.Control type="file" onChange={uploadGalleryProfile} multiple />
+                </Form.Group>
 
-        <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" controlId="gallery">
-                <Form.Label>Photo gallery</Form.Label>
-                <Form.Control type="file" onChange={uploadGalleryProfile} multiple />
-            </Form.Group>
+                <Button onClick={saveImages} variant="dark" disabled={loadingImage}>Save images</Button>
+            </Form>
 
-            <div className='modalBtnDiv'>
-                <Button variant="dark" type="submit" disabled={loadingImage} className='myBtn'>Upload images</Button>
-            </div>
 
-        </Form>
+        </>
+
     )
 }
 
