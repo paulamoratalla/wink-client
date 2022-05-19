@@ -5,6 +5,7 @@ import { useState, useEffect, useContext } from "react"
 import Loader from "../Loader/Loader"
 import './WinkerCard.css'
 import { AuthContext } from "../../context/auth.context"
+import { FiHeart } from "react-icons/cg";
 
 
 const WinkerCard = () => {
@@ -95,7 +96,7 @@ const WinkerCard = () => {
                                         <p>{data.features.children}</p>
                                         <p>{data.features.religion}</p>
                                         <p>{data.features.political}</p>
-                                        <Button className='matchbutton' onClick={() => addToMatch(data._id)} >Match</Button>
+                                        <Button className='matchbutton' onClick={() => addToMatch(data._id)} > <FiHeart /></Button>
                                     </Carousel.Caption>
                                 </Carousel.Item>
                             )

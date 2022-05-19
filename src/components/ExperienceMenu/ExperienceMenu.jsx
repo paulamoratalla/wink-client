@@ -32,7 +32,7 @@ const ExperienceMenu = () => {
                 {
                     experiences.slice(0, 4).map(experience => {
                         return (
-                            <Col md={3} key={experience._id}>
+                            <Col md={3} className='four-experiences' key={experience._id}>
                                 <ExperienceCard {...experience} />
                             </Col>
                         )

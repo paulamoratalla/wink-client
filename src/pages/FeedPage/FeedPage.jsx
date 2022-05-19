@@ -5,9 +5,9 @@ import WinkerCard from '../../components/WinkerCard/WinkerCard'
 const FeedPage = () => {
   return (
     <div>
-      {/* <BoughtExperiences /> */}
       <WinkerCard />
       <LoverCard />
+      <BoughtExperiences />
     </div>
   )
 }

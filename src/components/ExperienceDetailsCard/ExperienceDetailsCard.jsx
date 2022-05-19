@@ -19,8 +19,8 @@ const ExperienceDetailsCard = ({ name, place, price, imageExp, descriptionExp })
                         <>
                             <h6 className="ExperienceDetailsCard" class="card-subtitle mb-2 text-muted">{place}</h6>
                             <p className="ExperienceDetailsCard" class="card-text">{descriptionExp}</p>
-                            <p class="card-text">{price} $10.00</p>
-                            <Button className="ExperienceDetailsCard" onClick={() => setShowExperience(true)}>Buy experience</Button>
+                            <p class="card-text">{price}</p>
+                            <Button className="ExperienceDetailsButton" onClick={() => setShowExperience(true)}>Buy experience</Button>
                         </>
                     )}
                 </Card.Body>
