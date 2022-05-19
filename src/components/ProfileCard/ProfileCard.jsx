@@ -12,7 +12,7 @@ const ProfileCard = ({ _id, profileImg, name, email, modality, birth, identity, 
 
     return (
         <Card className="ProfileCard">
-            <Card.Img variant="top" src={profileImg} alt={name} />
+            <Card.Img className='avatarprofile' variant="top" src={profileImg} alt={name} />
             <Card.Body>
                 <Card.Title>{name}</Card.Title>
                 <h6 className="card-subtitle mb-2 text-muted">{modality}</h6>

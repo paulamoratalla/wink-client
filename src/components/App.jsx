@@ -8,9 +8,9 @@ const App = () => {
 
   return (
     <>
-        <Navigation />
-        <AppRoutes />
-        <Footer />
+      <Navigation />
+      <AppRoutes />
+      <Footer />
     </>
   );
 }

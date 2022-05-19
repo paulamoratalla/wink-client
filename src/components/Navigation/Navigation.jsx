@@ -38,22 +38,24 @@ const Navigation = () => {
                     {
                         isLoggedIn
                             ?
-                            user && <NavLink to="/profile" className="nav-link justify-content-end">Hello! {user.name}
-                                <Figure>
-                                    <Figure.Image className='miniavatar'
-                                        width={50}
-                                        height={50}
-                                        alt="user picture"
-                                        src={user.profileImg}
-                                    />
-                                </Figure>
+                            user && <>
+                                <NavLink to="/profile" className="nav-link justify-content-end">Hello! {user.name}
+                                    <Figure className='miniavatarFigure'>
+                                        <Figure.Image className='miniavatar'
+                                            width={50}
+                                            height={50}
+                                            alt="user picture"
+                                            src={user.profileImg}
+                                        />
+                                    </Figure>
+                                </NavLink>
                                 <NavDropdown title="" id="basic-nav-dropdown">
                                     <NavDropdown.Item to="/profile">Profile</NavDropdown.Item>
                                     <NavDropdown.Item to="#action/3.2">Settings</NavDropdown.Item>
                                     <NavDropdown.Divider />
                                     <NavDropdown.Item onClick={logOutUser}>Log out</NavDropdown.Item>
                                 </NavDropdown>
-                            </NavLink>
+                            </>
                             :
                             <>
                                 <Container class="container1">

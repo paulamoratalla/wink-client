@@ -1,0 +1,52 @@
+.feedcarousel img {
+    height: 600px;
+    object-fit: cover;
+    width: 400px;
+}
+
+.feedcarousel {
+    border-radius: 40px;
+}
+
+.carouselcontainer {
+    width: 1000px;
+}
+
+.carouselitem {
+    /* background-color: rgba(241, 176, 204, 0.7); */
+    /* background-color: rgba(72, 199, 193, 0.4); */
+    background-color: rgba(254, 104, 27, 0.4);
+    border-radius: 40px;
+}
+
+.feedcarousel img {
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+}
+
+button.matchbutton.btn.btn-primary {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: 12px;
+    font-weight: 500;
+    color: white;
+    background-color: #F1B0CC;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    width: 100px;
+}
+
+button.matchbutton.btn.btn-primary:hover {
+    background-color: #F1B0CC;
+    box-shadow: 0px 15px 20px #F1B0CC;
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+button.matchbutton.btn.btn-primary:active {
+    transform: translateY(-1px);
+}

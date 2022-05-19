@@ -8,7 +8,7 @@ const ModalWindow = ({ title, modalInfo, closeModal, children }) => {
             <Modal.Header closeButton>
                 <h3>{title}</h3>
             </Modal.Header>
-            <Modal.Body scrollable='true'>
+            <Modal.Body scrollable='true' closeModal={closeModal}>
                 {children}
             </Modal.Body>
         </Modal>

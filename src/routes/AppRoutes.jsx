@@ -1,17 +1,12 @@
-import LoginPage from "../pages/LoginPage/LoginPage"
-import SignupPage from "../pages/SignupPage/SignupPage"
 import FeedPage from '../pages/FeedPage/FeedPage'
 import ExperienceDetailsPage from '../pages/ExperienceDetailsPage/ExperienceDetailsPage'
 import HomePage from '../pages/HomePage/HomePage'
 import ProfilePage from '../pages/ProfilePage/ProfilePage'
 import ExperiencesPage from "../pages/ExperiencesPage/ExperiencesPage"
 import { Routes, Route } from "react-router-dom"
-import { useContext } from 'react'
-import { AuthContext } from '../context/auth.context'
 import PrivateRoute from "./PrivateRoute"
 import CheckoutForm from "../components/CheckoutForm/CheckoutForm"
 import ExperienceDetailsCard from "../components/ExperienceDetailsCard/ExperienceDetailsCard"
-import ProfileCard from "../components/ProfileCard/ProfileCard"
 import WinkerCard from "../components/WinkerCard/WinkerCard"
 import ProfileFormEdit from "../components/ProfileFormEdit/ProfileFormEdit"
 
@@ -20,8 +15,6 @@ const AppRoutes = () => {
     return (
         <Routes>
             <Route path='/' element={<HomePage />} />
-            <Route path="/signup" element={<SignupPage />} />
-            <Route path="/login" element={<LoginPage />} />
             <Route path='/feed' element={<PrivateRoute />} >
                 <Route path='' element={<FeedPage />} />
             </Route>

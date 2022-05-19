@@ -25,8 +25,25 @@ a.nav-link:active {
 }
 
 .miniavatar {
-    border-radius: 50px;
+    width: 40px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 100px;
 }
+
+.miniavatarFigure {
+    width: 40px;
+    height: 30px;
+    object-fit: cover;
+    margin-left: 10px;
+}
+
+/* .img.miniavatar.figure-img.img-fluid {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    margin-left: 10px;
+} */
 
 button.createAccountButton.btn.btn-primary {
     padding: 1em 1em;
@@ -52,4 +69,8 @@ button.createAccountButton.btn.btn-primary:hover {
 
 button.createAccountButton.btn.btn-primary:active {
     transform: translateY(-1px);
+}
+
+.a.nav-link {
+    color: pink;
 }

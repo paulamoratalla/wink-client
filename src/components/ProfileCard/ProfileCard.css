@@ -1,5 +1,6 @@
 .ProfileCard {
-    margin-bottom: 30px;
+    margin-top: 100px;
+    width: 100px;
 }
 
 .ProfileCard img {
@@ -7,6 +8,11 @@
     object-fit: cover;
 }
 
-p {
+*/ p {
     font-weight: 800;
+}
+
+img.card-img-top.avatarprofile {
+    height: 100px;
+    object-fit: cover;
 }

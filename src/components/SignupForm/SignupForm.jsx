@@ -6,7 +6,7 @@ import uploadService from "../../services/upload.service"
 import './SignupForm.css'
 
 
-const SignupForm = ({ changeModalContent }) => {
+const SignupForm = ({ changeModalContent, closeModal }) => {
 
     const [signupData, setSignupData] = useState({
         name: '',
@@ -66,8 +66,9 @@ const SignupForm = ({ changeModalContent }) => {
 
         authService
             .signup({ ...signupData })
-            .then(res => {
-                navigate('/login')
+            .then(() => {
+                // navigate('/')
+                closeModal() // comprobar que funciona 
             })
             .catch(err => console.log(err))
     }

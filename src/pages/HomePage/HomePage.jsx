@@ -7,6 +7,8 @@ import Steps from '../../components/Steps/Steps'
 import Fade from 'react-reveal/Fade';
 import ExperienceMenu from "../../components/ExperienceMenu/ExperienceMenu"
 import './HomePage.css'
+import Collaborations from "../../components/Collaborations/Collaborations"
+import Couples from "../../components/Couples/Couples"
 
 
 const HomePage = () => {
@@ -21,8 +23,14 @@ const HomePage = () => {
             <div className="stepscontainer">
                 <Steps />
             </div>
+            <div className="couplescontainer">
+                <Couples />
+            </div>
             <div className="experiencemenucontainer">
                 <ExperienceMenu />
+            </div>
+            <div className="collaborationscontainer">
+                <Collaborations />
             </div>
         </div >
 

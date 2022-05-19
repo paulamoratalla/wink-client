@@ -1,0 +1,23 @@
+.collaborations {
+    width: 20%;
+    object-fit: cover;
+    align-content: center;
+    margin-bottom: 20px;
+}
+
+.collabor {
+    align-items: center;
+    margin-left: 100px;
+}
+
+.collabor1 {
+    align-items: center;
+    margin-left: 100px;
+    margin-bottom: 50px;
+}
+
+.collaborationstitle {
+    margin-top: 50px;
+    text-align: center;
+    margin-bottom: 40px;
+}

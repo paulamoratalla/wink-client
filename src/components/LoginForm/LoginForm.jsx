@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { AuthContext } from './../../context/auth.context'
 import './LoginForm.css'
 
-const Loginform = ({ changeModalContent }) => {
+const Loginform = ({ changeModalContent, closeModal }) => {
 
     const [loginData, setLoginData] = useState({
         password: '',
@@ -25,6 +25,7 @@ const Loginform = ({ changeModalContent }) => {
                 storeToken(data.authToken)
                 authenticateUser()
                 navigate('/')
+                closeModal()
             })
             .catch(err => console.log(err))
     }

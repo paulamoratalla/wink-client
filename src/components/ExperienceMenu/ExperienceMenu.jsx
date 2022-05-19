@@ -28,7 +28,7 @@ const ExperienceMenu = () => {
         experiences.length
             ?
             <Row>
-                <h5 className='experiencemenutitle'>Check our experiences</h5>
+                <h4 className='experiencemenutitle'>Fall in love with our experiences</h4>
                 {
                     experiences.slice(0, 4).map(experience => {
                         return (

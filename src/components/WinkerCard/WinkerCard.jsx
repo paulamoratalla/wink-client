@@ -1,15 +1,24 @@
 import { Card, Container, Row, Col, Button, Carousel } from "react-bootstrap"
+import { Link } from 'react-router-dom'
 import usersService from '../../services/users.service'
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import Loader from "../Loader/Loader"
+import './WinkerCard.css'
+import { AuthContext } from "../../context/auth.context"
 
 
 const WinkerCard = () => {
 
     const [winkers, setWinkers] = useState([])
+    const [myUser, setMyUser] = useState({})
 
 
-    useEffect(() => loadWinkers(), [])
+    useEffect(() => {
+        loadWinkers()
+        loadMyUser()
+    }, [])
+
+    const { user } = useContext(AuthContext)
 
     const loadWinkers = () => {
 
@@ -28,57 +37,85 @@ const WinkerCard = () => {
 
     }
 
+    const loadMyUser = () => {
 
-    // console.log('---->', winkers)
+        usersService
+            .getOneUser(user._id)
+            .then(({ data }) => { setMyUser(data) })
+            .catch(err => console.log(err))
+    }
 
+
+    const filteredUsers = winkers.filter(elm => elm._id !== user._id) // todos los users menos yo
+
+    const notMatchedUsers = filteredUsers?.filter(elm => {
+
+        const myUserMatches = myUser?.matches?.map(mat => mat._id)
+        const hasMatch = myUserMatches?.includes(elm._id)
+
+        return !hasMatch
+
+        // console.log('MI UUSUARIO', myUser.matches)
+        // console.log('MI ID', elm._id)
+        // // !myUser?.matches?.includes(elm._id)
+    }) // todos los users que no tengo en mis matches (no funchiona)
+
+    console.log('FINALMENTE:', notMatchedUsers)
 
     return (
-        winkers.length
+        notMatchedUsers.length
             ?
-            <Container>
-
-                <Row>
+            <Container className='carouselcontainer'>
+                <Carousel className="feedcarousel">
                     {
-                        winkers.map(data => {
+                        notMatchedUsers.map(data => {
                             return (
-                                <>
-                                    <Col md={{ span: 6 }}>
-                                        <Card>
-                                            <Card.Img className='bg-image hover-zoom' variant="top" src={data.profileImg} alt={data.name} />
-                                        </Card>
-                                    </Col>
-                                    <Col md={{ span: 6 }}>
-                                        <Card className="m-2">
-                                            <Card.Body>
-                                                <Card.Title>{data.name} </Card.Title>
-                                                <Card.Text>From: {data.city}</Card.Text>
-                                                <Card.Text>Born in: {data.birth}</Card.Text>
-                                                <Card.Text>Gender: {data.identity}</Card.Text>
-                                                <Card.Text>Interested in: {data.interestedGender}</Card.Text>
-                                                <Card.Text>Height: {data.features.height}</Card.Text>
-                                                <Card.Text>Excercise: {data.features.exercise}</Card.Text>
-                                                <Card.Text>Zodiac sign: {data.features.zodiac}</Card.Text>
-                                                <Card.Text>Education level: {data.features.education}</Card.Text>
-                                                <Card.Text>Drink: {data.features.drink}</Card.Text>
-                                                <Card.Text>Smoke: {data.features.smoke}</Card.Text>
-                                                <Card.Text>Looking for: {data.features.lookingFor}</Card.Text>
-                                                <Card.Text>Religion: {data.features.religion}</Card.Text>
-                                                <Card.Text>Political: {data.features.political}</Card.Text>
-                                            </Card.Body>
-                                        </Card>
-                                        <Button onClick={() => addToMatch(data._id)} >Match</Button>
-                                    </Col>
-                                </>
 
+                                <Carousel.Item className='carouselitem'>
+                                    <img
+                                        className="d-block"
+                                        src={data.profileImg}
+                                        alt="First slide"
+                                    />
+                                    <Carousel.Caption>
+                                        <Link to={`/${data._id}/profile`}><h3>{data.name}</h3></Link>
+                                        <p>{data.birth}</p>
+                                        <p>{data.city}</p>
+                                        <p>{data.interestedGender}</p>
+                                        <p>{data.city}</p>
+                                        <p>{data.features.height}</p>
+                                        <p>{data.features.exercise}</p>
+                                        <p>{data.features.zodiac}</p>
+                                        <p>{data.features.education}</p>
+                                        <p>{data.features.drink}</p>
+                                        <p>{data.features.smoke}</p>
+                                        <p>{data.features.drink}</p>
+                                        <p>{data.features.smoke}</p>
+                                        <p>{data.features.lookingFor}</p>
+                                        <p>{data.features.children}</p>
+                                        <p>{data.features.religion}</p>
+                                        <p>{data.features.political}</p>
+                                        <Button className='matchbutton' onClick={() => addToMatch(data._id)} >Match</Button>
+                                    </Carousel.Caption>
+                                </Carousel.Item>
                             )
                         })
+
                     }
-                </Row>
+                </Carousel>
             </Container>
+
             :
             <Loader />
+
     )
 
 }
 
 export default WinkerCard
+
+
+
+
+
+
