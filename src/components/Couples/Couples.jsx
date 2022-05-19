@@ -12,28 +12,28 @@ class Couples extends React.Component {
                         <div className='peoplesnamestitle'>
                             <h4>Happy Wink endings...</h4>
                         </div>
-                        <Col>
+                        <Col md={3}>
                             <div className='peoplesnames'>
                                 <img className='peopleImg' src='/pic1.png'></img>
                                 <h6>Mark & Wyatt</h6>
                                 <p>Since 2016</p>
                             </div>
                         </Col>
-                        <Col>
+                        <Col md={3}>
                             <div className='peoplesnames'>
                                 <img className='peopleImg' src='/pic3.png'></img>
                                 <h6>Vanessa & Aiden</h6>
                                 <p>Since 2019</p>
                             </div>
                         </Col>
-                        <Col>
+                        <Col md={3}>
                             <div className='peoplesnames'>
                                 <img className='peopleImg' src='/pic2.png'></img>
                                 <h6>Laura & Jules</h6>
                                 <p>Since 2018</p>
                             </div>
                         </Col>
-                        <Col>
+                        <Col md={3}>
                             <div className='peoplesnames'>
                                 <img className='peopleImg' src='/pic4.png'></img>
                                 <h6>Mario & Nicole</h6>

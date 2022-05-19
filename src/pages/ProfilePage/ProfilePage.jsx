@@ -36,10 +36,10 @@ const ProfilePage = () => {
                 {isLoggedIn}
                 <hr />
                 <Row>
-                    <Col>
+                    <Col md={4}>
                         <ProfileCard {...profile} />
                     </Col>
-                    <Col>
+                    <Col md={8}>
                         <GalleryProfile {...profile} />
                     </Col>
                 </Row>
