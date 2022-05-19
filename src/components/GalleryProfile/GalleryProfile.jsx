@@ -9,6 +9,7 @@ import Loader from "../Loader/Loader"
 
 
 
+
 const GalleryProfile = ({ _id }) => {
 
     const [user, setUser] = useState({})
@@ -47,7 +48,7 @@ const GalleryProfile = ({ _id }) => {
 
                     <Link to={`/${_id}/upload-images`}>
                         <div className="d-grid gap-2">
-                            <Button className="mt-5" variant="dark">Upload images</Button>
+                            <Button className="loginbutton mt-5" >Upload images</Button>
                         </div>
                     </Link>
                 </Container >

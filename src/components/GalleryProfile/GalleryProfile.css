@@ -1,8 +1,32 @@
 .gallery-images {
-    width: 100%;
+    width: 80%;
+    margin-bottom: 10px;
+    border-radius: 10px;
 
 }
 
 .gallery-row {
     margin-left: 80px;
+}
+
+.loginbutton {
+    color: #090909;
+    padding: 0.3em 1.3em;
+    font-size: 16px;
+    border-radius: 0.5em;
+    background: #E8E8E8;
+    border: 1px solid #E8E8E8;
+    transition: all .3s;
+    box-shadow: 6px 6px 12px #C5C5C5,
+        -6px -6px 12px #FFFFFF;
+    margin-left: 30px;
+}
+
+.loginbutton:hover {
+    border: 1px solid white;
+}
+
+.loginbutton:active {
+    box-shadow: 4px 4px 12px #C5C5C5,
+        -4px -4px 12px #FFFFFF;
 }
