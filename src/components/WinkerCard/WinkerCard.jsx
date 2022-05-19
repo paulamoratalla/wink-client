@@ -1,7 +1,8 @@
-import { Card, Container, Row, Col, Button, Carousel } from "react-bootstrap"
+import { Card, Container, Row, Col, Button, Carousel, NavLink } from "react-bootstrap"
 import usersService from '../../services/users.service'
 import { useState, useEffect } from "react"
 import Loader from "../Loader/Loader"
+import { Link } from "react-router-dom"
 
 
 const WinkerCard = () => {
@@ -64,9 +65,13 @@ const WinkerCard = () => {
                                                 <Card.Text>Looking for: {data.features.lookingFor}</Card.Text>
                                                 <Card.Text>Religion: {data.features.religion}</Card.Text>
                                                 <Card.Text>Political: {data.features.political}</Card.Text>
+                                                <Link to={`/${data._id}/profile`}>Ver perfil</Link>
                                             </Card.Body>
                                         </Card>
                                         <Button onClick={() => addToMatch(data._id)} >Match</Button>
+                                        <Button>
+                                            <Link className="text-white" to={`/${data._id}/profile`}>Ver perfil</Link>
+                                        </Button>
                                     </Col>
                                 </>
 

@@ -6,14 +6,12 @@ import HomePage from '../pages/HomePage/HomePage'
 import ProfilePage from '../pages/ProfilePage/ProfilePage'
 import ExperiencesPage from "../pages/ExperiencesPage/ExperiencesPage"
 import { Routes, Route } from "react-router-dom"
-import { useContext } from 'react'
-import { AuthContext } from '../context/auth.context'
 import PrivateRoute from "./PrivateRoute"
 import CheckoutForm from "../components/CheckoutForm/CheckoutForm"
 import ExperienceDetailsCard from "../components/ExperienceDetailsCard/ExperienceDetailsCard"
-import ProfileCard from "../components/ProfileCard/ProfileCard"
 import WinkerCard from "../components/WinkerCard/WinkerCard"
 import ProfileFormEdit from "../components/ProfileFormEdit/ProfileFormEdit"
+import WinkProfile from "../pages/WinkProfile/WinkProfile"
 
 const AppRoutes = () => {
 
@@ -46,6 +44,9 @@ const AppRoutes = () => {
             </Route>
             <Route path='/:_id/edit-profile' element={<PrivateRoute />} >
                 <Route path='' element={<ProfileFormEdit />} />
+            </Route>
+            <Route path='/:_id/profile' element={<PrivateRoute />} >
+                <Route path='' element={<WinkProfile />} />
             </Route>
         </Routes>
     )

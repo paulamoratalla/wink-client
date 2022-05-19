@@ -1,0 +1,18 @@
+.ExperienceDetailsPage {
+    border-radius: 25px;
+    font-family: raleway;
+}
+
+.boton-comprar {
+    background-color: #f6a4eb !important;
+    border-color: #f6a4eb !important;
+}
+
+.FormRowStripe {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-left: 15px;
+    border-top: 1px solid #819efc;
+}

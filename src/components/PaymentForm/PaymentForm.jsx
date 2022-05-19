@@ -2,25 +2,27 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js"
 import axios from "axios"
 import React, { useState } from 'react'
 import { Col, Container, Form, Row } from "react-bootstrap"
+import './PaymentForm.css'
 
 
 const CARD_OPTIONS = {
     iconStyle: "solid",
     style: {
         base: {
-            iconColor: "#c4f0ff",
-            color: "#fff",
+            iconColor: "#ffff",
+            color: "#ffff",
             fontWeight: 500,
-            fontFamily: "Roboto, Open Sans, Segoe UI, sans-serif",
-            fontSize: "16px",
+            fontFamily: "Raleway",
+            fontSize: "18px",
             fontSmoothing: "antialiased",
-            ":-webkit-autofill": { color: "#fce883" },
-            "::placeholder": { color: "#87bbfd" }
+            ":-webkit-autofill": { color: "#ffff" },
+            "::placeholder": { color: "#ffff" }
         },
         invalid: {
             iconColor: "#ffc7ee",
             color: "#ffc7ee"
         }
+
     }
 }
 
@@ -66,12 +68,12 @@ const PaymentForm = () => {
                     <Col className='mb-3' md={{ span: 6, offset: 3 }}>
                         {!success ?
                             <Form onSubmit={handleSubmit}>
-                                <fieldset className="FormGroup">
-                                    <div className="FormRow">
+                                <fieldset className="FormGroupStripe">
+                                    <div className="FormRowStripe">
                                         <CardElement options={CARD_OPTIONS} />
                                     </div>
                                 </fieldset>
-                                <button>Pay</button>
+                                <button className="stripeBtn">Pay</button>
                             </Form>
                             :
                             <div>

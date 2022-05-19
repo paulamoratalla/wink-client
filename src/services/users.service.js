@@ -48,6 +48,9 @@ class UsersService {
     uploadImages = (_id, galleryProfile) => {
         return this.api.put(`/${_id}/upload-images`, galleryProfile)
     }
+    winkerProfile = (_id) => {
+        return this.api.get(`/'${_id}/profile'`)
+    }
 
 }
 

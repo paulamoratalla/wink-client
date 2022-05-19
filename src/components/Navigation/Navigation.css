@@ -2,10 +2,11 @@
     width: 100%;
     padding: 15px;
     backdrop-filter: blur(16px) brightness(105%);
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 40px;
+    border-radius: 40px;
     z-index: 2;
-    color: white;
+    color: white !important;
+    margin-top: 5px;
+    
 }
 
 .logo {
@@ -13,7 +14,7 @@
 }
 
 a.nav-link {
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 a.nav-link:active {
