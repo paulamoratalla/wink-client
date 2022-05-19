@@ -1,12 +1,16 @@
 .ProfileCard {
     margin-bottom: 30px;
+    width: 300px;
 }
 
-.ProfileCard img {
-    height: 100px;
+.profile-img {
+    width: 300px;
     object-fit: cover;
+    border-radius: 250px !important;
 }
 
 p {
-    font-weight: 800;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    text-align: center;
 }

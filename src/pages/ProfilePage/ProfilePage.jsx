@@ -1,10 +1,11 @@
-import { Container, Button } from 'react-bootstrap'
+import { Container, Button, Col, Row } from 'react-bootstrap'
 import ProfileCard from '../../components/ProfileCard/ProfileCard'
 import { useContext, useEffect, useState } from "react"
 import usersService from '../../services/users.service'
 import { AuthContext } from '../../context/auth.context'
 import { useParams, Link } from 'react-router-dom'
 import Loader from '../../components/Loader/Loader'
+import GalleryProfile from '../../components/GalleryProfile/GalleryProfile'
 
 
 
@@ -34,7 +35,14 @@ const ProfilePage = () => {
                 <h1>My Profile</h1>
                 {isLoggedIn}
                 <hr />
-                <ProfileCard {...profile} />
+                <Row>
+                    <Col>
+                        <ProfileCard {...profile} />
+                    </Col>
+                    <Col>
+                        <GalleryProfile {...profile} />
+                    </Col>
+                </Row>
             </Container>
             :
             <Loader />

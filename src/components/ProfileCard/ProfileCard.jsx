@@ -1,5 +1,6 @@
 import { Button, Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import "./ProfileCard.css"
 
 
 const ProfileCard = ({ _id, profileImg, name, email, modality, birth, identity, city, interestedGender, features }) => {
@@ -8,11 +9,10 @@ const ProfileCard = ({ _id, profileImg, name, email, modality, birth, identity, 
 
     const newDate = birth.slice(0, 10)
 
-    console.log('_id------->', _id)
 
     return (
         <Card className="ProfileCard">
-            <Card.Img variant="top" src={profileImg} alt={name} />
+            <Card.Img className="profile-img" variant="top" src={profileImg} alt={name} />
             <Card.Body>
                 <Card.Title>{name}</Card.Title>
                 <h6 className="card-subtitle mb-2 text-muted">{modality}</h6>
