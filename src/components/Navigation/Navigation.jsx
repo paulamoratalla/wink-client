@@ -1,4 +1,4 @@
-import { Navbar, Container, Nav, NavDropdown, Figure, Button } from 'react-bootstrap'
+import { Navbar, Container, Nav, NavDropdown, Figure, Button, Row } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
 import { AuthContext } from '../../context/auth.context'
 import { useContext, useState } from 'react'

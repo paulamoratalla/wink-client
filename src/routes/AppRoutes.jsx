@@ -11,7 +11,6 @@ import { AuthContext } from '../context/auth.context'
 import PrivateRoute from "./PrivateRoute"
 import CheckoutForm from "../components/CheckoutForm/CheckoutForm"
 import ExperienceDetailsCard from "../components/ExperienceDetailsCard/ExperienceDetailsCard"
-import ProfileForm from "../components/ProfileForm/ProfileForm"
 import ProfileCard from "../components/ProfileCard/ProfileCard"
 import WinkerCard from "../components/WinkerCard/WinkerCard"
 import ProfileFormEdit from "../components/ProfileFormEdit/ProfileFormEdit"
@@ -38,7 +37,6 @@ const AppRoutes = () => {
             <Route path='/checkout' element={<CheckoutForm />} />
             <Route path='/experience-buy' element={<ExperienceDetailsCard />} />
             {/* PRUEBAS */}
-            <Route path='/profile/:_id' element={<ProfileForm />} />
             <Route path='/profile' element={<PrivateRoute />} >
                 <Route path='' element={<ProfilePage />} />
             </Route>
