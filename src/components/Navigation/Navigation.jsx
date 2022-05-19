@@ -1,5 +1,5 @@
 import { Navbar, Container, Nav, NavDropdown, Figure, Button, Row } from 'react-bootstrap'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import { AuthContext } from '../../context/auth.context'
 import { useContext, useState } from 'react'
 import Loginform from '../LoginForm/LoginForm'
@@ -8,8 +8,10 @@ import ModalWindow from "../../components/ModalWindow/ModalWindow"
 import './Navigation.css'
 import { Link } from 'react-router-dom'
 
+const TRANSPARENT_NAVIGATION_PATHS = [URL.HOMEPAGE, URL.EXPERIENCES];
 
 const Navigation = () => {
+    const history = useLocation()
     const [modalInfo, setModalInfo] = useState({
         show: false,
         content: 'Login'
@@ -18,8 +20,10 @@ const Navigation = () => {
     const closeModal = () => setModalInfo({ ...modalInfo, show: false })
     const changeModalContent = content => setModalInfo({ ...modalInfo, content })
     const { user, logOutUser, isLoggedIn } = useContext(AuthContext)
+    const transparentBackgroundClassName = TRANSPARENT_NAVIGATION_PATHS.find((path) => path === history.pathname) ? 'navbar-transparent' : 'navbar'
+
     return (
-        <Navbar className="navbar" expand="lg" >
+        <Navbar className={transparentBackgroundClassName} expand="lg" >
             <Container>
                 <NavLink to="/">
                     <Navbar.Brand as="span"><img className="logo" src='/winklogo.png' ></img></Navbar.Brand>

@@ -1,12 +1,22 @@
 .navbar {
     width: 100%;
     padding: 15px;
+    background-color: rgba(0, 0, 0, .4);
+    border-radius: 40px;
+    z-index: 2;
+    color: white !important;
+    margin-top: 5px;
+}
+
+.navbar-transparent {
+    width: 100%;
+    padding: 15px;
     backdrop-filter: blur(16px) brightness(105%);
     border-radius: 40px;
     z-index: 2;
     color: white !important;
     margin-top: 5px;
-    
+
 }
 
 .logo {
@@ -36,7 +46,7 @@ a.nav-link:active {
     width: 40px;
     height: 30px;
     object-fit: cover;
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
 /* .img.miniavatar.figure-img.img-fluid {

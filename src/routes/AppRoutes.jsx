@@ -11,17 +11,18 @@ import WinkerCard from "../components/WinkerCard/WinkerCard"
 import ProfileFormEdit from "../components/ProfileFormEdit/ProfileFormEdit"
 import WinkProfile from "../pages/WinkProfile/WinkProfile"
 import GalleryProfileForm from "../components/GalleryProfileForm/GalleryProfileForm"
+import { URL } from '../constants/navigation'
 
 
 const AppRoutes = () => {
 
     return (
         <Routes>
-            <Route path='/' element={<HomePage />} />
-            <Route path='/feed' element={<PrivateRoute />} >
+            <Route path={URL.HOMEPAGE} element={<HomePage />} />
+            <Route path={URL.FEED} element={<PrivateRoute />} >
                 <Route path='' element={<FeedPage />} />
             </Route>
-            <Route path='/experiences' element={<ExperiencesPage />} />
+            <Route path={URL.EXPERIENCES} element={<ExperiencesPage />} />
             <Route path='/experience/:_id' element={<PrivateRoute />} >
                 <Route path='' element={<ExperienceDetailsPage />} />
             </Route>
