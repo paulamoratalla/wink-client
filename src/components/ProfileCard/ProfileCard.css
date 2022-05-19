@@ -1,18 +1,16 @@
 .ProfileCard {
-    margin-top: 100px;
-    width: 100px;
+    margin-bottom: 30px;
+    width: 300px;
 }
 
-.ProfileCard img {
-    height: 100px;
+.profile-img {
+    width: 300px;
     object-fit: cover;
+    border-radius: 250px !important;
 }
 
-*/ p {
-    font-weight: 800;
-}
-
-img.card-img-top.avatarprofile {
-    height: 100px;
-    object-fit: cover;
+p {
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    text-align: center;
 }

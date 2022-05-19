@@ -5,9 +5,7 @@ import { Container, Row, Col, Button } from 'react-bootstrap'
 import Loader from '../../components/Loader/Loader'
 import { AuthContext } from '../../context/auth.context'
 import CheckoutForm from '../../components/CheckoutForm/CheckoutForm'
-
-
-
+import './ExperienceDetailsPage.css'
 
 
 function ExperienceDetailsPage() {
@@ -51,26 +49,26 @@ function ExperienceDetailsPage() {
             <Loader />
             :
             <Container>
-                <h1>{name}</h1>
-                <hr />
+                <h1 className='d-flex justify-content-center ExperienceDetailsPage'>{name}</h1>
+                <hr className='mb-5' />
                 {showExperience ?
                     <CheckoutForm />
                     :
                     <Row>
                         <Col className='mb-3' md={{ span: 4, offset: 1 }}>
-                            <h3>{place}</h3>
-                            <p>{descriptionExp}</p>
-                            <p>${price} USD</p>
-                            <Button className='mb-3' onClick={() => setShowExperience(true)}>Buy experience</Button>
+                            <h3 className='ExperienceDetailsPage'>{place}</h3>
+                            <p className='ExperienceDetailsPage'>{descriptionExp}</p>
+                            <p className='ExperienceDetailsPage'>${price} USD</p>
+                            <Button className='boton-comprar m-3 ExperienceDetailsPage' onClick={() => setShowExperience(true)}>Buy experience</Button>
                             <Link to="/experiences">
-                                <Button className='mb-3' variant="dark">Back to experiences</Button>
+                                <Button className='m-3 ExperienceDetailsPage' variant="dark">Back to experiences</Button>
                             </Link>
 
-                            <Button className='mb-5' variant="dark" onClick={() => deleteExperience(_id)}>Delete experience</Button>
+                            {/* <Button className='mb-5' variant="dark" onClick={() => deleteExperience(_id)}>Delete experience</Button> */}
 
                         </Col>
-                        <Col className='mb-3' md={{ span: 6 }}>
-                            <img style={{ width: '100%' }} src={imageExp} alt={name} />
+                        <Col className='mb-3 ' md={{ span: 6 }}>
+                            <img className='ExperienceDetailsPage' style={{ width: '100%' }} src={imageExp} alt={name} />
                         </Col>
 
                     </Row>

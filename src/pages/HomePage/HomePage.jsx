@@ -17,7 +17,7 @@ const HomePage = () => {
         <div>
             <div className="home">
                 <div className="hero">
-                    <img className="bgImg" src='/background.png'></img>
+                    <img className="bgImg" src='/images/aereal-1.jpeg'></img>
                 </div>
             </div>
             <div className="stepscontainer">

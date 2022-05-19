@@ -10,24 +10,24 @@ class Steps extends React.Component {
                 <Container>
 
                     <Row>
-                        <Col xs={1} className='fadetitle'> <Fade left> <h1>1</h1>   </Fade></Col>
-                        <Col xs={11} className='fadetitle'>    <Fade left> <h4>Create an account</h4>
+                        <Col md={1} className='fadetitle'> <Fade left> <h1>1</h1>   </Fade></Col>
+                        <Col md={11} className='fadetitle'>    <Fade left> <h4>Create an account</h4>
                             <p>We want to know your hobbies, future plans, and what your perfect date will look like. Then we will try to find your perfect match.</p>
                         </Fade>
                         </Col>
                     </Row>
 
                     <Row>
-                        <Col xs={1} className='fadetitle'> <Fade left> <h1>2</h1>   </Fade></Col>
-                        <Col xs={11} className='fadetitle'>    <Fade left> <h4>Meet new people</h4>
+                        <Col md={1} className='fadetitle'> <Fade left> <h1>2</h1>   </Fade></Col>
+                        <Col md={11} className='fadetitle'>    <Fade left> <h4>Meet new people</h4>
                             <p>We will match you with people who have a similar personality to yours, regardless of their sexual identity.</p>
                         </Fade>
                         </Col>
                     </Row>
 
                     <Row>
-                        <Col xs={1} className='fadetitle'> <Fade left> <h1>3</h1>   </Fade></Col>
-                        <Col xs={11} className='fadetitle'>    <Fade left> <h4>Get a date</h4>
+                        <Col md={1} className='fadetitle'> <Fade left> <h1>3</h1>   </Fade></Col>
+                        <Col md={11} className='fadetitle'>    <Fade left> <h4>Get a date</h4>
                             <p>Choose an experience and enjoy a date with the person that you like the most.</p>
                         </Fade>
                         </Col>

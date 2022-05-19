@@ -9,6 +9,9 @@ import CheckoutForm from "../components/CheckoutForm/CheckoutForm"
 import ExperienceDetailsCard from "../components/ExperienceDetailsCard/ExperienceDetailsCard"
 import WinkerCard from "../components/WinkerCard/WinkerCard"
 import ProfileFormEdit from "../components/ProfileFormEdit/ProfileFormEdit"
+import WinkProfile from "../pages/WinkProfile/WinkProfile"
+import GalleryProfileForm from "../components/GalleryProfileForm/GalleryProfileForm"
+
 
 const AppRoutes = () => {
 
@@ -22,17 +25,6 @@ const AppRoutes = () => {
             <Route path='/experience/:_id' element={<PrivateRoute />} >
                 <Route path='' element={<ExperienceDetailsPage />} />
             </Route>
-            {/* <Route path='/profile' element={<PrivateRoute />} >
-                <Route path='' element={<ProfilePage />} />
-            </Route> */}
-            <Route path="*" element={<h1>404 route not found</h1>} />
-            {/* //Stripe prueba */}
-            <Route path='/checkout' element={<CheckoutForm />} />
-            <Route path='/experience-buy' element={<ExperienceDetailsCard />} />
-            {/* PRUEBAS */}
-            <Route path='/profile' element={<PrivateRoute />} >
-                <Route path='' element={<ProfilePage />} />
-            </Route>
             <Route path='/winker-card' element={<WinkerCard />} />
             <Route path='/profile' element={<PrivateRoute />} >
                 <Route path='' element={<ProfilePage />} />
@@ -40,6 +32,18 @@ const AppRoutes = () => {
             <Route path='/:_id/edit-profile' element={<PrivateRoute />} >
                 <Route path='' element={<ProfileFormEdit />} />
             </Route>
+            <Route path='/:_id/profile' element={<PrivateRoute />} >
+                <Route path='' element={<WinkProfile />} />
+            </Route>
+            <Route path='/:_id/upload-images' element={<PrivateRoute />} >
+                <Route path='' element={<GalleryProfileForm />} />
+            </Route>
+
+            <Route path="*" element={<h1>404 route not found</h1>} />
+            {/* //Stripe prueba */}
+            <Route path='/checkout' element={<CheckoutForm />} />
+            <Route path='/experience-buy' element={<ExperienceDetailsCard />} />
+
         </Routes>
     )
 }

@@ -1,0 +1,9 @@
+.ExperienceDetailsCard {
+    font-family: Raleway;
+    color: aqua;
+    background-color: blue;
+}
+
+.expImg {
+    border-radius: 25px;
+}
