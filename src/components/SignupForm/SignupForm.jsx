@@ -3,6 +3,7 @@ import { Form, Button } from "react-bootstrap"
 import authService from "../../services/auth.service"
 import { useNavigate } from 'react-router-dom'
 import uploadService from "../../services/upload.service"
+import './SignupForm.css'
 
 
 const SignupForm = ({ changeModalContent }) => {
@@ -99,12 +100,6 @@ const SignupForm = ({ changeModalContent }) => {
                     <Form.Label>City</Form.Label>
                     <Form.Control type="text" onChange={handleInputChange} name="city" value={city} />
                 </Form.Group>
-
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                    <label class="form-check-label" for="exampleCheck1">I am 18 years or older</label>
-                </div>
-
                 <Form.Group className="mb-3" controlId="birth">
                     <Form.Label>Date of Birth</Form.Label>
                     <Form.Control type="date" value={birth} onChange={handleInputChange} name="birth" />
@@ -232,9 +227,9 @@ const SignupForm = ({ changeModalContent }) => {
                     </Form.Select>
                 </Form.Group>
 
-                <Button variant="dark" type="submit" disabled={loadingImage}>{loadingImage ? 'Loading Image...' : 'Sign up'}</Button>
+                <Button className="signupbutton" type="submit" disabled={loadingImage}>{loadingImage ? 'Loading Image...' : 'Sign up'}</Button>
                 <div class="text-center">
-                    <p>Already have an account? <button onClick={() => changeModalContent('login')}> Log In</button></p>
+                    <p>Already have an account? <button className="loginbutton" onClick={() => changeModalContent('Login')}> Log In</button></p>
                 </div>
             </Form>
         </>

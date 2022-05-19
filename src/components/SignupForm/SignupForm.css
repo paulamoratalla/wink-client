@@ -1,0 +1,48 @@
+.loginbutton {
+    color: #090909;
+    padding: 0.3em 1.3em;
+    font-size: 16px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    transition: all .3s;
+    box-shadow: 6px 6px 12px #c5c5c5,
+        -6px -6px 12px #ffffff;
+    margin-left: 30px;
+}
+
+.loginbutton:hover {
+    border: 1px solid white;
+}
+
+.loginbutton:active {
+    box-shadow: 4px 4px 12px #c5c5c5,
+        -4px -4px 12px #ffffff;
+}
+
+button.signupbutton.btn.btn-primary {
+    padding: 1em 3em;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    background-color: #F1B0CC;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+button.signupbutton.btn.btn-primary:hover {
+    background-color: #F1B0CC;
+    box-shadow: 0px 15px 20px #F1B0CC;
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+button.signupbutton.btn.btn-primary:active {
+    transform: translateY(-1px);
+}

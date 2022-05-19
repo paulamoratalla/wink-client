@@ -53,7 +53,7 @@ const Loginform = ({ changeModalContent }) => {
             <Button className="loginbutton" type="submit">Log in</Button>
 
             <div class="text-center">
-                <p>Don't have an account yet? <button className="signupbutton" onClick={() => changeModalContent('signup')}> Sign up</button></p>
+                <p>Don't have an account yet? <button className="signupbutton" onClick={() => changeModalContent('Signup')}> Sign up</button></p>
             </div>
 
         </Form>

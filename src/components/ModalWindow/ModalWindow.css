@@ -1,0 +1,11 @@
+button.btn-close {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+.modal-content {
+    padding: 15px;
+    backdrop-filter: blur(16px) brightness(105%);
+    border-radius: 20px;
+}

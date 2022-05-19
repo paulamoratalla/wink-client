@@ -1,5 +1,4 @@
 .navbar {
-    position: fixed;
     width: 100%;
     padding: 15px;
     backdrop-filter: blur(16px) brightness(105%);

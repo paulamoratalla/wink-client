@@ -1,4 +1,5 @@
 import { Modal } from "react-bootstrap"
+import './ModalWindow.css'
 
 const ModalWindow = ({ title, modalInfo, closeModal, children }) => {
 
