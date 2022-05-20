@@ -54,14 +54,14 @@ function ExperienceDetailsPage() {
                 {showExperience ?
                     <CheckoutForm />
                     :
-                    <Row>
+                    <Row >
                         <Col className='mb-3' md={{ span: 4, offset: 1 }}>
                             <h3 className='ExperienceDetailsPage'>{place}</h3>
                             <p className='ExperienceDetailsPage'>{descriptionExp}</p>
                             <p className='ExperienceDetailsPage'>${price} USD</p>
                             <Button className='boton-comprar m-3 ExperienceDetailsPage' onClick={() => setShowExperience(true)}>Buy experience</Button>
                             <Link to="/experiences">
-                                <Button className='m-3 ExperienceDetailsPage' variant="dark">Back to experiences</Button>
+                                <Button className='boton-regresar m-3 ExperienceDetailsPage' variant="dark">Back to experiences</Button>
                             </Link>
 
                             {/* <Button className='mb-5' variant="dark" onClick={() => deleteExperience(_id)}>Delete experience</Button> */}

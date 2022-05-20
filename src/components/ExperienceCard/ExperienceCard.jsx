@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom'
 const ExperienceCard = ({ _id, name, imageExp, price }) => {
 
     return (
-        <div>
-            <Card className="experiencecard">
+        <div className='d-flex justify-content-center'>
+            <Card className="experiencecard ">
                 <Link to={`/experience/${_id}`}>
                     <div className="card-img">
                         <Card.Img className='bg-image hover-zoom' variant="top" src={imageExp} alt={name} />

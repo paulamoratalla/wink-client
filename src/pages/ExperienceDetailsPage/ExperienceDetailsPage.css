@@ -4,8 +4,8 @@
 }
 
 .boton-comprar {
-    background-color: #f6a4eb !important;
-    border-color: #f6a4eb !important;
+    background-color: #F1B0CC !important;
+    border-color: #F1B0CC !important;
 }
 
 .FormRowStripe {
@@ -15,4 +15,9 @@
     align-items: center;
     margin-left: 15px;
     border-top: 1px solid #819efc;
+}
+
+.boton-regresar {
+    background-color: #C5C5C5 !important;
+    border-color: #C5C5C5 !important;
 }

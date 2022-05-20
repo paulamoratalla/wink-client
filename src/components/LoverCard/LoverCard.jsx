@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { Container, Button, Card, Row, Col } from 'react-bootstrap'
+=======
+import { Container, Button, Card, Row, Carousel, Col } from 'react-bootstrap'
+>>>>>>> 494482b47363b3b81b9f4d808f612a03f6d68c3e
 import ProfileCard from '../../components/ProfileCard/ProfileCard'
 import { useContext, useEffect, useState } from "react"
 import usersService from '../../services/users.service'
