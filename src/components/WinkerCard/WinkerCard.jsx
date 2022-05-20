@@ -5,7 +5,7 @@ import { useState, useEffect, useContext } from "react"
 import Loader from "../Loader/Loader"
 import './WinkerCard.css'
 import { AuthContext } from "../../context/auth.context"
-import { FiHeart } from "react-icons/cg";
+import { BsSuitHeartFill } from 'react-icons/bs';
 
 
 const WinkerCard = () => {
@@ -79,24 +79,37 @@ const WinkerCard = () => {
                                         alt="First slide"
                                     />
                                     <Carousel.Caption>
-                                        <Link to={`/${data._id}/profile`}><h3>{data.name}</h3></Link>
-                                        <p>{data.birth}</p>
-                                        <p>{data.city}</p>
-                                        <p>{data.interestedGender}</p>
-                                        <p>{data.city}</p>
-                                        <p>{data.features.height}</p>
-                                        <p>{data.features.exercise}</p>
+                                        <Row>
+                                            <Col md={2}>
+                                                <Link to={`/${data._id}/profile`}><h3>{data.name}</h3></Link>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col md={2}>
+                                                <p>{data.birth}</p><p>{data.city}</p> <p>{data.interestedGender}</p>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col md={2}>
+                                                <p>{data.city}</p>     <p>{data.features.height}</p> <p>{data.features.exercise}</p>
+                                            </Col>
+                                        </Row>
+
+
+
+
+
+
+
                                         <p>{data.features.zodiac}</p>
                                         <p>{data.features.education}</p>
-                                        <p>{data.features.drink}</p>
-                                        <p>{data.features.smoke}</p>
                                         <p>{data.features.drink}</p>
                                         <p>{data.features.smoke}</p>
                                         <p>{data.features.lookingFor}</p>
                                         <p>{data.features.children}</p>
                                         <p>{data.features.religion}</p>
                                         <p>{data.features.political}</p>
-                                        <Button className='matchbutton' onClick={() => addToMatch(data._id)} > <FiHeart /></Button>
+                                        <Button className='matchbutton' onClick={() => addToMatch(data._id)} ><BsSuitHeartFill /> Match</Button>
                                     </Carousel.Caption>
                                 </Carousel.Item>
                             )
