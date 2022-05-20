@@ -3,7 +3,7 @@
     height: 100%;
     object-fit: cover;
     z-index: -5;
-    margin-top: -90px;
+    margin-top: -106px;
     left: 0;
 }
 
@@ -19,4 +19,8 @@
 .experiencemenucontainer {
     margin-bottom: 50px;
     margin-top: 50px;
+}
+
+.collaborationscontainer {
+    align-items: center;
 }

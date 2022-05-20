@@ -1,9 +1,29 @@
-.ExperienceDetailsCard {
-    font-family: Raleway;
-    color: aqua;
-    background-color: blue;
-}
-
 .expImg {
     border-radius: 25px;
+}
+
+.ExperienceDetailsButton {
+    padding: 1em 1em;
+    font-size: 12px;
+    font-weight: 500;
+    color: white;
+    background-color: #F1B0CC;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    width: 100px;
+}
+
+.ExperienceDetailsButton:hover {
+    background-color: #F1B0CC;
+    box-shadow: 0px 15px 20px #F1B0CC;
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+.ExperienceDetailsButton:active {
+    transform: translateY(-1px);
 }

@@ -4,7 +4,7 @@ import experiencesService from '../../services/experiences.service'
 import { AuthContext } from './../../context/auth.context'
 import ExperienceCard from './../../components/ExperienceCard/ExperienceCard'
 import Loader from './../../components/Loader/Loader'
-import { Row, Col } from 'react-bootstrap'
+import { Row, Col, Container } from 'react-bootstrap'
 
 const ExperienceMenu = () => {
 
@@ -27,6 +27,7 @@ const ExperienceMenu = () => {
     return (
         experiences.length
             ?
+<<<<<<< HEAD
             <Row >
                 <h4 className='experiencemenutitle'>Fall in love with our experiences</h4>
                 {
@@ -39,6 +40,24 @@ const ExperienceMenu = () => {
                     })
                 }
             </Row>
+=======
+            <Container>
+
+                <Row>
+                    <h4 className='experiencemenutitle'>Fall in love with our experiences</h4>
+                    {
+                        experiences.slice(0, 4).map(experience => {
+                            return (
+                                <Col md={3} key={experience._id}>
+                                    <ExperienceCard {...experience} />
+                                </Col>
+                            )
+                        })
+                    }
+                </Row>
+
+            </Container>
+>>>>>>> 4b6307a2261ab53c5bb875782f58f10d89fb4871
             :
             <Loader />
     )

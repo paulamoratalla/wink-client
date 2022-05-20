@@ -40,7 +40,6 @@ const ExperiencesPage = () => {
         loadExperiences()
     }
 
-    //Protegerla con ADMIN ROLE
     return (
         <>
             <Carousel className='CarouselExp' variant="light">
@@ -80,7 +79,7 @@ const ExperiencesPage = () => {
             </Carousel>
             <Container>
                 <h1 className='experienceslisttitle mt-5'>Our best experiences</h1>
-                <hr />
+
                 {
                     isLoggedIn & user?.role === 'ADMIN'
                         ?

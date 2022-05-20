@@ -1,10 +1,19 @@
 .ProfileCard {
     margin-bottom: 30px;
-    width: 300px;
+    width: 320px;
 }
 
 .profile-img {
-    width: 300px;
     object-fit: cover;
     border-radius: 250px !important;
+    width: 90% !important;
+    align-self: center;
+    padding-top: 20px;
+
+}
+
+.card-text-profile-card {
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    text-align: center;
 }

@@ -9,6 +9,7 @@ import Loader from "../Loader/Loader"
 
 
 
+
 const GalleryProfile = ({ _id }) => {
 
     const [user, setUser] = useState({})
@@ -36,18 +37,18 @@ const GalleryProfile = ({ _id }) => {
         galleryProfile ?
             <>
 
-                <Container className="galleryProfile">
-                    <Row>
+                <Container className="galleryProfile m-5 p-2">
+                    <Row className="gallery-row p-2">
                         {
                             galleryProfile.map(image => {
-                                return <Col><img src={image} alt="" /></Col>
+                                return <Col md={6}><img className="gallery-images ml-10" src={image} alt="" /></Col>
                             })
                         }
                     </Row>
 
                     <Link to={`/${_id}/upload-images`}>
                         <div className="d-grid gap-2">
-                            <Button variant="dark">Upload images</Button>
+                            <Button className="loginbutton mt-5" >Upload images</Button>
                         </div>
                     </Link>
                 </Container >

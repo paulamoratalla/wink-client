@@ -1,48 +1,46 @@
-import { Card, Row } from 'react-bootstrap'
-import { useContext, useEffect, useState } from "react"
-import usersService from '../../services/users.service'
-import { AuthContext } from '../../context/auth.context'
-import Loader from '../../components/Loader/Loader'
 import './BoughtExperiences.css'
-
+import { useContext, useEffect, useState } from "react"
+import experiencesService from '../../services/experiences.service'
+import { AuthContext } from './../../context/auth.context'
+import ExperienceCard from './../../components/ExperienceCard/ExperienceCard'
+import Loader from './../../components/Loader/Loader'
+import { Row, Col } from 'react-bootstrap'
 
 const BoughtExperiences = () => {
-    const [profile, setProfile] = useState()
-    const [isLoaded, setIsLoaded] = useState(false)
 
-    const { user, isLoggedIn } = useContext(AuthContext)
+    const [experiences, setExperiences] = useState([])
 
-    useEffect(() => {
 
-        usersService
-            .getOneUser(user._id)
+    useEffect(() => loadExperiences(), [])
+
+    const loadExperiences = () => {
+        experiencesService
+            .getAllExperiences()
             .then(({ data }) => {
-                setProfile(data)
-                setIsLoaded(true)
+                setExperiences(data)
             })
             .then(err => console.log(err))
-    }, [])
+    }
+
+    const { isLoggedIn } = useContext(AuthContext)
 
     return (
-        profile ?
-            <>
-                <Row>
-                    {
-                        profile?.boughtExperiences.map(experience => {
-                            return (
-                                <div>
-                                    <Card clasName='card' style={{ width: '18rem' }}>
-                                        <Card.Img variant="top" src={experience.profileImg} />
-                                    </Card>
-                                </div>
-                            )
-                        })
-                    }
-                </Row>
-            </>
+        experiences.length
+            ?
+            <Row>
+                <h4 className='myexperiences'>My experiences</h4>
+                {
+                    experiences.slice(4, 8).map(experience => {
+                        return (
+                            <Col md={3} className='four-experiences' key={experience._id}>
+                                <ExperienceCard {...experience} />
+                            </Col>
+                        )
+                    })
+                }
+            </Row>
             :
             <Loader />
-
     )
 }
 
