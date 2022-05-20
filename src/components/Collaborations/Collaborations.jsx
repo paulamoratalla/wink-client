@@ -6,12 +6,12 @@ class Collaborations extends React.Component {
     render() {
         return (
 
-            <div>
-                <Container>
+            <div >
+                <Container >
                     <div className='collaborationstitle'>
                         <h4>Partnerships</h4>
                     </div>
-                    <Row className='collabor'>
+                    <Row className='collabor d-flex justify-content-center'>
                         <Col md={3}>
                             <img className='collaborations' src='/colabo-01.png' alt=''></img>
                         </Col>
