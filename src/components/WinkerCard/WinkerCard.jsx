@@ -5,11 +5,7 @@ import { useState, useEffect, useContext } from "react"
 import Loader from "../Loader/Loader"
 import './WinkerCard.css'
 import { AuthContext } from "../../context/auth.context"
-<<<<<<< HEAD
-import { BsSuitHeartFill } from 'react-icons/bs';
-=======
 import { FaHeart } from 'react-icons/fa'
->>>>>>> 494482b47363b3b81b9f4d808f612a03f6d68c3e
 
 
 const WinkerCard = () => {
