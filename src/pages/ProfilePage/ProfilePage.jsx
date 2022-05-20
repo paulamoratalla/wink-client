@@ -31,7 +31,7 @@ const ProfilePage = () => {
 
     return (
         isLoaded ?
-            <Container>
+            <Container className='my-profile mt-3'>
                 <h1>My Profile</h1>
                 {isLoggedIn}
                 <hr />

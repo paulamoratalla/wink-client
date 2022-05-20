@@ -96,7 +96,7 @@ const WinkerCard = () => {
                                         <p>{data.features.children}</p>
                                         <p>{data.features.religion}</p>
                                         <p>{data.features.political}</p>
-                                        <Button className='matchbutton' onClick={() => addToMatch(data._id)} > <FiHeart /></Button>
+                                        <Button className='matchbutton' onClick={() => addToMatch(data._id)} > </Button>
                                     </Carousel.Caption>
                                 </Carousel.Item>
                             )
