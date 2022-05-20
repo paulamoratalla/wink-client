@@ -50,3 +50,21 @@ button.matchbutton.btn.btn-primary:hover {
 button.matchbutton.btn.btn-primary:active {
     transform: translateY(-1px);
 }
+
+.h-winker {
+    text-decoration: none;
+    color: white;
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+.p-winker {
+    background-color: #FF8A27;
+    border-radius: 25px;
+    padding: 5px;
+    font-weight: bolder;
+}
+
+.img-winker {
+    width: 100%;
+}

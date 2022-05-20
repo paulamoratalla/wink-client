@@ -1,4 +1,4 @@
-import { Container, Button, Card, Row } from 'react-bootstrap'
+import { Container, Button, Card, Row, Carousel, Col } from 'react-bootstrap'
 import ProfileCard from '../../components/ProfileCard/ProfileCard'
 import { useContext, useEffect, useState } from "react"
 import usersService from '../../services/users.service'
@@ -28,19 +28,29 @@ const LoverCard = () => {
     return (
         profile ?
             <>
-                <Row>
-                    {
-                        profile?.lovers.map(lover => {
-                            return (
-                                <div>
-                                    <Card clasName='lovercard' style={{ width: '18rem' }}>
-                                        <Card.Img variant="top" src={lover.profileImg} />
-                                    </Card>
-                                </div>
-                            )
-                        })
-                    }
-                </Row>
+                <Container lassName='carouselcontainer'>
+                    <Carousel className="feedcarousel">
+                        {
+                            
+                            profile?.lovers.map(lover => {
+                                console.log('Esto es un loveeeer----------->', lover)
+                                return (
+                                    <>
+                                        {/* <Carousel.Item className='carouselitem'>
+                                            <div>
+                                                <Card clasName='lovercard' style={{ width: '18rem' }}>
+                                                    <Card.Img variant="top" src={lover.profileImg} />
+                                                </Card>
+                                            </div>
+                                        </Carousel.Item> */}
+                                       
+                                    </>
+
+                                )
+                            })
+                        }
+                    </Carousel>
+                </Container>
             </>
             :
             <Loader />

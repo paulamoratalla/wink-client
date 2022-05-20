@@ -8,9 +8,3 @@
     object-fit: cover;
     border-radius: 250px !important;
 }
-
-p {
-    background-color: #f4f4f4;
-    border-radius: 8px;
-    text-align: center;
-}

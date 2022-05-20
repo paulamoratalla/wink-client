@@ -5,6 +5,7 @@ import { useState, useEffect, useContext } from "react"
 import Loader from "../Loader/Loader"
 import './WinkerCard.css'
 import { AuthContext } from "../../context/auth.context"
+import { FaHeart } from 'react-icons/fa'
 
 
 const WinkerCard = () => {
@@ -60,7 +61,6 @@ const WinkerCard = () => {
         // // !myUser?.matches?.includes(elm._id)
     }) // todos los users que no tengo en mis matches (no funchiona)
 
-    console.log('FINALMENTE:', notMatchedUsers)
 
     return (
         notMatchedUsers.length
@@ -73,29 +73,44 @@ const WinkerCard = () => {
 
                                 <Carousel.Item className='carouselitem'>
                                     <img
-                                        className="d-block"
+                                        className="d-block img-winker"
                                         src={data.profileImg}
                                         alt="First slide"
                                     />
                                     <Carousel.Caption>
-                                        <Link to={`/${data._id}/profile`}><h3>{data.name}</h3></Link>
-                                        <p>{data.birth}</p>
-                                        <p>{data.city}</p>
-                                        <p>{data.interestedGender}</p>
-                                        <p>{data.city}</p>
-                                        <p>{data.features.height}</p>
-                                        <p>{data.features.exercise}</p>
-                                        <p>{data.features.zodiac}</p>
-                                        <p>{data.features.education}</p>
-                                        <p>{data.features.drink}</p>
-                                        <p>{data.features.smoke}</p>
-                                        <p>{data.features.drink}</p>
-                                        <p>{data.features.smoke}</p>
-                                        <p>{data.features.lookingFor}</p>
-                                        <p>{data.features.children}</p>
-                                        <p>{data.features.religion}</p>
-                                        <p>{data.features.political}</p>
-                                        <Button className='matchbutton' onClick={() => addToMatch(data._id)} >Match</Button>
+                                        <Container>
+                                            <Row>
+                                                <Col>
+                                                </Col>
+                                                <Col>
+                                                    <br />
+                                                    <br />
+                                                    <br />
+                                                    <br />
+                                                    <Link className='h-winker' to={`/${data._id}/profile`}><h3 className='h-winker'>{data.name}</h3></Link>
+                                                    <hr />
+                                                </Col>
+                                                <Col>
+                                                    <p className='p-winker' >{data.features.height}</p>
+                                                    <p className='p-winker' >{data.features.exercise}</p>
+                                                    <p className='p-winker' >{data.features.zodiac}</p>
+                                                    <p className='p-winker' >{data.features.education}</p>
+                                                    <p className='p-winker' >{data.features.smoke}</p>
+                                                    <p className='p-winker' >{data.features.smoke}</p>
+                                                    <p className='p-winker' >{data.features.lookingFor}</p>
+                                                    <Button className='matchbutton ' onClick={() => addToMatch(data._id)} ><FaHeart /> Match</Button>
+                                                </Col>
+                                                <Col>
+                                                    <br />
+                                                    <p className='p-winker'>{data.birth.slice(0, 10)}</p>
+                                                    <p className='p-winker' >{data.interestedGender}</p>
+                                                    <p className='p-winker' >{data.city}</p>
+                                                    <p className='p-winker' >{data.features.children}</p>
+                                                    <p className='p-winker' >{data.features.religion}</p>
+                                                    <p className='p-winker' >{data.features.political}</p>
+                                                </Col>
+                                            </Row>
+                                        </Container>
                                     </Carousel.Caption>
                                 </Carousel.Item>
                             )
