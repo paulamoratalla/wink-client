@@ -22,4 +22,3 @@ const ExperienceCard = ({ _id, name, imageExp, price }) => {
 }
 
 export default ExperienceCard
-

@@ -2,7 +2,7 @@
     border-radius: 25px;
 }
 
-.ExperienceDetailsButton {
+button.ExperienceDetailsButton.btn-primary {
     padding: 1em 1em;
     font-size: 12px;
     font-weight: 500;
@@ -15,15 +15,20 @@
     cursor: pointer;
     outline: none;
     width: 100px;
+    margin-bottom: 50px;
 }
 
-.ExperienceDetailsButton:hover {
+button.ExperienceDetailsButton.btn-primary:hover {
     background-color: #F1B0CC;
     box-shadow: 0px 15px 20px #F1B0CC;
     color: #fff;
     transform: translateY(-7px);
 }
 
-.ExperienceDetailsButton:active {
+button.ExperienceDetailsButton.btn-primary:active {
     transform: translateY(-1px);
+}
+
+.ExperienceDetailsCard {
+    margin-top: 50px;
 }

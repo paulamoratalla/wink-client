@@ -4,10 +4,7 @@ import uploadService from '../../services/upload.service'
 import { useParams } from 'react-router-dom'
 import usersService from '../../services/users.service'
 
-
-
 const GalleryProfileForm = ({ closeModal, refreshDetails }) => {
-
 
     const [galleryProfile, setGalleryProfile] = useState({
         gallery: []
@@ -31,8 +28,6 @@ const GalleryProfileForm = ({ closeModal, refreshDetails }) => {
                 setLoadingImage(false)
                 setGalleryProfile({ ...galleryProfile, gallery: data.cloudinary_urls })
             })
-
-
     }
 
     function saveImages() {
@@ -55,8 +50,6 @@ const GalleryProfileForm = ({ closeModal, refreshDetails }) => {
 
                 <Button onClick={saveImages} variant="dark" disabled={loadingImage}>Save images</Button>
             </Form>
-
-
         </>
 
     )

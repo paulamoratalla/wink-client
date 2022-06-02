@@ -11,7 +11,7 @@ class Collaborations extends React.Component {
                     <div className='collaborationstitle'>
                         <h4>Partnerships</h4>
                     </div>
-                    <Row className='collabor d-flex justify-content-center'>
+                    <Row className='collabor d-flex justify-content-center' style={{ textAlign: 'center' }}>
                         <Col md={3}>
                             <img className='collaborations' src='/colabo-01.png' alt=''></img>
                         </Col>
@@ -26,7 +26,7 @@ class Collaborations extends React.Component {
                         </Col>
 
                     </Row >
-                    <Row className='collabor1'>
+                    <Row className='collabor1' style={{ textAlign: 'center' }}>
                         <Col md={3}>
                             <img className='collaborations' src='/colabo-05.png' alt=''></img>
                         </Col >

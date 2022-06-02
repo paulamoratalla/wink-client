@@ -4,7 +4,7 @@
     border-radius: 0.em;
 }
 
-.loverstitle {
+.lovertitle {
     margin-top: 100px;
     text-align: center;
     margin-bottom: 50px
@@ -18,7 +18,7 @@
     box-shadow: 0.3em 0.3em 0.7em #00000015;
     transition: border 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     margin-bottom: 50px;
-    margin-left: 10px;
+    align-items: center;
 }
 
 .lovercard:hover {

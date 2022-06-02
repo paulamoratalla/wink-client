@@ -1,13 +1,9 @@
 import { useEffect } from "react"
 import { useState } from "react"
-import { Container, Row, Col, Button, Modal } from "react-bootstrap"
+import { Container, Row, Col } from "react-bootstrap"
 import usersService from "../../services/users.service"
-import { Link } from 'react-router-dom'
 import "./GalleryWinkProfile.css"
 import Loader from "../Loader/Loader"
-
-
-
 
 const GalleryWinkProfile = ({ _id }) => {
 
@@ -35,7 +31,6 @@ const GalleryWinkProfile = ({ _id }) => {
 
         galleryProfile ?
             <>
-
                 <Container className="galleryProfile m-5 p-2">
                     <Row className="gallery-row p-2">
                         {
@@ -46,18 +41,10 @@ const GalleryWinkProfile = ({ _id }) => {
                     </Row>
 
                 </Container >
-
             </>
             :
-
             <Loader />
-
-
     )
-
-
-
-
 }
 
 export default GalleryWinkProfile
