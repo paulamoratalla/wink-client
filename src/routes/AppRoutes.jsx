@@ -13,7 +13,6 @@ import WinkProfile from "../pages/WinkProfile/WinkProfile"
 import GalleryProfileForm from "../components/GalleryProfileForm/GalleryProfileForm"
 import { URL } from '../constants/navigation'
 
-
 const AppRoutes = () => {
 
     return (
@@ -44,7 +43,6 @@ const AppRoutes = () => {
             {/* //Stripe prueba */}
             <Route path='/checkout' element={<CheckoutForm />} />
             <Route path='/experience-buy' element={<ExperienceDetailsCard />} />
-
         </Routes>
     )
 }

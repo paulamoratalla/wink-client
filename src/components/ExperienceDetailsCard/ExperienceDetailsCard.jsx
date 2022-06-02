@@ -12,7 +12,7 @@ const ExperienceDetailsCard = ({ name, place, price, imageExp, descriptionExp })
             <Card className="ExperienceDetailsCard">
                 <Card.Img className='expImg' variant="top" src={imageExp} alt="Experience card details" />
                 <Card.Body>
-                    <Card.Title className="ExperienceDetailsCard" >{name} Pruebaaaaa</Card.Title>
+                    <Card.Title className="ExperienceDetailsCard" >{name}</Card.Title>
                     {showExperience ? (
                         <CheckoutForm />
                     ) : (
@@ -30,4 +30,3 @@ const ExperienceDetailsCard = ({ name, place, price, imageExp, descriptionExp })
 }
 
 export default ExperienceDetailsCard
-

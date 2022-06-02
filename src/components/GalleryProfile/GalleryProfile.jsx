@@ -1,14 +1,9 @@
-import { useEffect } from "react"
-import { useState } from "react"
-import { Container, Row, Col, Button, Modal } from "react-bootstrap"
-import usersService from "../../services/users.service"
+import { useState, useEffect } from 'react'
+import { Container, Row, Col, Button } from 'react-bootstrap'
+import usersService from '../../services / users.service'
 import { Link } from 'react-router-dom'
-import GalleryProfileForm from "../GalleryProfileForm/GalleryProfileForm"
-import "./GalleryProfile.css"
-import Loader from "../Loader/Loader"
-
-
-
+import './GalleryProfile.css'
+import Loader from 'components/Loader/Loader'
 
 const GalleryProfile = ({ _id }) => {
 
